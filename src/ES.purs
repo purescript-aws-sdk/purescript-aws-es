@@ -20,77 +20,103 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "ES" :: String
-
 
 -- | <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging" target="_blank"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>
 addTags :: forall eff. AddTagsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-addTags = Request.request serviceName "addTags" 
+addTags = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "addTags"
 
 
 -- | <p>Creates a new Elasticsearch domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
 createElasticsearchDomain :: forall eff. CreateElasticsearchDomainRequest -> Aff (exception :: EXCEPTION | eff) CreateElasticsearchDomainResponse
-createElasticsearchDomain = Request.request serviceName "createElasticsearchDomain" 
+createElasticsearchDomain = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "createElasticsearchDomain"
 
 
 -- | <p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>
 deleteElasticsearchDomain :: forall eff. DeleteElasticsearchDomainRequest -> Aff (exception :: EXCEPTION | eff) DeleteElasticsearchDomainResponse
-deleteElasticsearchDomain = Request.request serviceName "deleteElasticsearchDomain" 
+deleteElasticsearchDomain = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "deleteElasticsearchDomain"
 
 
 -- | <p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr" target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>
 deleteElasticsearchServiceRole :: forall eff.  Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteElasticsearchServiceRole = Request.request serviceName "deleteElasticsearchServiceRole" (Types.NoInput unit)
+deleteElasticsearchServiceRole = Request.request service method (Types.NoInput unit) where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "deleteElasticsearchServiceRole"
 
 
 -- | <p>Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.</p>
 describeElasticsearchDomain :: forall eff. DescribeElasticsearchDomainRequest -> Aff (exception :: EXCEPTION | eff) DescribeElasticsearchDomainResponse
-describeElasticsearchDomain = Request.request serviceName "describeElasticsearchDomain" 
+describeElasticsearchDomain = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "describeElasticsearchDomain"
 
 
 -- | <p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>
 describeElasticsearchDomainConfig :: forall eff. DescribeElasticsearchDomainConfigRequest -> Aff (exception :: EXCEPTION | eff) DescribeElasticsearchDomainConfigResponse
-describeElasticsearchDomainConfig = Request.request serviceName "describeElasticsearchDomainConfig" 
+describeElasticsearchDomainConfig = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "describeElasticsearchDomainConfig"
 
 
 -- | <p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>
 describeElasticsearchDomains :: forall eff. DescribeElasticsearchDomainsRequest -> Aff (exception :: EXCEPTION | eff) DescribeElasticsearchDomainsResponse
-describeElasticsearchDomains = Request.request serviceName "describeElasticsearchDomains" 
+describeElasticsearchDomains = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "describeElasticsearchDomains"
 
 
 -- | <p> Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying. </p>
 describeElasticsearchInstanceTypeLimits :: forall eff. DescribeElasticsearchInstanceTypeLimitsRequest -> Aff (exception :: EXCEPTION | eff) DescribeElasticsearchInstanceTypeLimitsResponse
-describeElasticsearchInstanceTypeLimits = Request.request serviceName "describeElasticsearchInstanceTypeLimits" 
+describeElasticsearchInstanceTypeLimits = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "describeElasticsearchInstanceTypeLimits"
 
 
 -- | <p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>
 listDomainNames :: forall eff.  Aff (exception :: EXCEPTION | eff) ListDomainNamesResponse
-listDomainNames = Request.request serviceName "listDomainNames" (Types.NoInput unit)
+listDomainNames = Request.request service method (Types.NoInput unit) where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "listDomainNames"
 
 
 -- | <p>List all Elasticsearch instance types that are supported for given ElasticsearchVersion</p>
 listElasticsearchInstanceTypes :: forall eff. ListElasticsearchInstanceTypesRequest -> Aff (exception :: EXCEPTION | eff) ListElasticsearchInstanceTypesResponse
-listElasticsearchInstanceTypes = Request.request serviceName "listElasticsearchInstanceTypes" 
+listElasticsearchInstanceTypes = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "listElasticsearchInstanceTypes"
 
 
 -- | <p>List all supported Elasticsearch versions</p>
 listElasticsearchVersions :: forall eff. ListElasticsearchVersionsRequest -> Aff (exception :: EXCEPTION | eff) ListElasticsearchVersionsResponse
-listElasticsearchVersions = Request.request serviceName "listElasticsearchVersions" 
+listElasticsearchVersions = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "listElasticsearchVersions"
 
 
 -- | <p>Returns all tags for the given Elasticsearch domain.</p>
 listTags :: forall eff. ListTagsRequest -> Aff (exception :: EXCEPTION | eff) ListTagsResponse
-listTags = Request.request serviceName "listTags" 
+listTags = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "listTags"
 
 
 -- | <p>Removes the specified set of tags from the specified Elasticsearch domain.</p>
 removeTags :: forall eff. RemoveTagsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-removeTags = Request.request serviceName "removeTags" 
+removeTags = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "removeTags"
 
 
 -- | <p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>
 updateElasticsearchDomainConfig :: forall eff. UpdateElasticsearchDomainConfigRequest -> Aff (exception :: EXCEPTION | eff) UpdateElasticsearchDomainConfigResponse
-updateElasticsearchDomainConfig = Request.request serviceName "updateElasticsearchDomainConfig" 
+updateElasticsearchDomainConfig = Request.request service method  where
+    service = Request.ServiceName "ES"
+    method = Request.MethodName "updateElasticsearchDomainConfig"
 
 
 -- | <p>The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
