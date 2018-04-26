@@ -3,7 +3,7 @@
 #### `addTags`
 
 ``` purescript
-addTags :: forall eff. Service -> AddTagsRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+addTags :: forall eff. Service -> AddTagsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging" target="_blank"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>
@@ -27,7 +27,7 @@ deleteElasticsearchDomain :: forall eff. Service -> DeleteElasticsearchDomainReq
 #### `deleteElasticsearchServiceRole`
 
 ``` purescript
-deleteElasticsearchServiceRole :: forall eff. Service -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteElasticsearchServiceRole :: forall eff. Service -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr" target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>
@@ -99,7 +99,7 @@ listTags :: forall eff. Service -> ListTagsRequest -> Aff (exception :: EXCEPTIO
 #### `removeTags`
 
 ``` purescript
-removeTags :: forall eff. Service -> RemoveTagsRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+removeTags :: forall eff. Service -> RemoveTagsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Removes the specified set of tags from the specified Elasticsearch domain.</p>

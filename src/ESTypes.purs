@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -74,8 +73,8 @@ newAddTagsRequest' _ARN _TagList customize = (AddTagsRequest <<< customize) { "A
 
 -- | <p> List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> . </p>
 newtype AdditionalLimit = AdditionalLimit 
-  { "LimitName" :: NullOrUndefined (LimitName)
-  , "LimitValues" :: NullOrUndefined (LimitValueList)
+  { "LimitName" :: Maybe (LimitName)
+  , "LimitValues" :: Maybe (LimitValueList)
   }
 derive instance newtypeAdditionalLimit :: Newtype AdditionalLimit _
 derive instance repGenericAdditionalLimit :: Generic AdditionalLimit _
@@ -85,12 +84,12 @@ instance encodeAdditionalLimit :: Encode AdditionalLimit where encode = genericE
 
 -- | Constructs AdditionalLimit from required parameters
 newAdditionalLimit :: AdditionalLimit
-newAdditionalLimit  = AdditionalLimit { "LimitName": (NullOrUndefined Nothing), "LimitValues": (NullOrUndefined Nothing) }
+newAdditionalLimit  = AdditionalLimit { "LimitName": Nothing, "LimitValues": Nothing }
 
 -- | Constructs AdditionalLimit's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAdditionalLimit' :: ( { "LimitName" :: NullOrUndefined (LimitName) , "LimitValues" :: NullOrUndefined (LimitValueList) } -> {"LimitName" :: NullOrUndefined (LimitName) , "LimitValues" :: NullOrUndefined (LimitValueList) } ) -> AdditionalLimit
-newAdditionalLimit'  customize = (AdditionalLimit <<< customize) { "LimitName": (NullOrUndefined Nothing), "LimitValues": (NullOrUndefined Nothing) }
+newAdditionalLimit' :: ( { "LimitName" :: Maybe (LimitName) , "LimitValues" :: Maybe (LimitValueList) } -> {"LimitName" :: Maybe (LimitName) , "LimitValues" :: Maybe (LimitValueList) } ) -> AdditionalLimit
+newAdditionalLimit'  customize = (AdditionalLimit <<< customize) { "LimitName": Nothing, "LimitValues": Nothing }
 
 
 
@@ -137,7 +136,7 @@ newAdvancedOptionsStatus' _Options _Status customize = (AdvancedOptionsStatus <<
 
 -- | <p>An error occurred while processing the request.</p>
 newtype BaseException = BaseException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeBaseException :: Newtype BaseException _
 derive instance repGenericBaseException :: Generic BaseException _
@@ -147,12 +146,12 @@ instance encodeBaseException :: Encode BaseException where encode = genericEncod
 
 -- | Constructs BaseException from required parameters
 newBaseException :: BaseException
-newBaseException  = BaseException { "message": (NullOrUndefined Nothing) }
+newBaseException  = BaseException { "message": Nothing }
 
 -- | Constructs BaseException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBaseException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> BaseException
-newBaseException'  customize = (BaseException <<< customize) { "message": (NullOrUndefined Nothing) }
+newBaseException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> BaseException
+newBaseException'  customize = (BaseException <<< customize) { "message": Nothing }
 
 
 
@@ -168,15 +167,15 @@ instance encodeCloudWatchLogsLogGroupArn :: Encode CloudWatchLogsLogGroupArn whe
 
 newtype CreateElasticsearchDomainRequest = CreateElasticsearchDomainRequest 
   { "DomainName" :: (DomainName)
-  , "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString)
-  , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig)
-  , "EBSOptions" :: NullOrUndefined (EBSOptions)
-  , "AccessPolicies" :: NullOrUndefined (PolicyDocument)
-  , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions)
-  , "VPCOptions" :: NullOrUndefined (VPCOptions)
-  , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions)
-  , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions)
-  , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions)
+  , "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString)
+  , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig)
+  , "EBSOptions" :: Maybe (EBSOptions)
+  , "AccessPolicies" :: Maybe (PolicyDocument)
+  , "SnapshotOptions" :: Maybe (SnapshotOptions)
+  , "VPCOptions" :: Maybe (VPCOptions)
+  , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions)
+  , "AdvancedOptions" :: Maybe (AdvancedOptions)
+  , "LogPublishingOptions" :: Maybe (LogPublishingOptions)
   }
 derive instance newtypeCreateElasticsearchDomainRequest :: Newtype CreateElasticsearchDomainRequest _
 derive instance repGenericCreateElasticsearchDomainRequest :: Generic CreateElasticsearchDomainRequest _
@@ -186,18 +185,18 @@ instance encodeCreateElasticsearchDomainRequest :: Encode CreateElasticsearchDom
 
 -- | Constructs CreateElasticsearchDomainRequest from required parameters
 newCreateElasticsearchDomainRequest :: DomainName -> CreateElasticsearchDomainRequest
-newCreateElasticsearchDomainRequest _DomainName = CreateElasticsearchDomainRequest { "DomainName": _DomainName, "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchClusterConfig": (NullOrUndefined Nothing), "ElasticsearchVersion": (NullOrUndefined Nothing), "EncryptionAtRestOptions": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newCreateElasticsearchDomainRequest _DomainName = CreateElasticsearchDomainRequest { "DomainName": _DomainName, "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "EBSOptions": Nothing, "ElasticsearchClusterConfig": Nothing, "ElasticsearchVersion": Nothing, "EncryptionAtRestOptions": Nothing, "LogPublishingOptions": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 -- | Constructs CreateElasticsearchDomainRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateElasticsearchDomainRequest' :: DomainName -> ( { "DomainName" :: (DomainName) , "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig) , "EBSOptions" :: NullOrUndefined (EBSOptions) , "AccessPolicies" :: NullOrUndefined (PolicyDocument) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions) , "VPCOptions" :: NullOrUndefined (VPCOptions) , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } -> {"DomainName" :: (DomainName) , "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig) , "EBSOptions" :: NullOrUndefined (EBSOptions) , "AccessPolicies" :: NullOrUndefined (PolicyDocument) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions) , "VPCOptions" :: NullOrUndefined (VPCOptions) , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } ) -> CreateElasticsearchDomainRequest
-newCreateElasticsearchDomainRequest' _DomainName customize = (CreateElasticsearchDomainRequest <<< customize) { "DomainName": _DomainName, "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchClusterConfig": (NullOrUndefined Nothing), "ElasticsearchVersion": (NullOrUndefined Nothing), "EncryptionAtRestOptions": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newCreateElasticsearchDomainRequest' :: DomainName -> ( { "DomainName" :: (DomainName) , "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig) , "EBSOptions" :: Maybe (EBSOptions) , "AccessPolicies" :: Maybe (PolicyDocument) , "SnapshotOptions" :: Maybe (SnapshotOptions) , "VPCOptions" :: Maybe (VPCOptions) , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions) , "AdvancedOptions" :: Maybe (AdvancedOptions) , "LogPublishingOptions" :: Maybe (LogPublishingOptions) } -> {"DomainName" :: (DomainName) , "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig) , "EBSOptions" :: Maybe (EBSOptions) , "AccessPolicies" :: Maybe (PolicyDocument) , "SnapshotOptions" :: Maybe (SnapshotOptions) , "VPCOptions" :: Maybe (VPCOptions) , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions) , "AdvancedOptions" :: Maybe (AdvancedOptions) , "LogPublishingOptions" :: Maybe (LogPublishingOptions) } ) -> CreateElasticsearchDomainRequest
+newCreateElasticsearchDomainRequest' _DomainName customize = (CreateElasticsearchDomainRequest <<< customize) { "DomainName": _DomainName, "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "EBSOptions": Nothing, "ElasticsearchClusterConfig": Nothing, "ElasticsearchVersion": Nothing, "EncryptionAtRestOptions": Nothing, "LogPublishingOptions": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 
 
 -- | <p>The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.</p>
 newtype CreateElasticsearchDomainResponse = CreateElasticsearchDomainResponse 
-  { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus)
+  { "DomainStatus" :: Maybe (ElasticsearchDomainStatus)
   }
 derive instance newtypeCreateElasticsearchDomainResponse :: Newtype CreateElasticsearchDomainResponse _
 derive instance repGenericCreateElasticsearchDomainResponse :: Generic CreateElasticsearchDomainResponse _
@@ -207,12 +206,12 @@ instance encodeCreateElasticsearchDomainResponse :: Encode CreateElasticsearchDo
 
 -- | Constructs CreateElasticsearchDomainResponse from required parameters
 newCreateElasticsearchDomainResponse :: CreateElasticsearchDomainResponse
-newCreateElasticsearchDomainResponse  = CreateElasticsearchDomainResponse { "DomainStatus": (NullOrUndefined Nothing) }
+newCreateElasticsearchDomainResponse  = CreateElasticsearchDomainResponse { "DomainStatus": Nothing }
 
 -- | Constructs CreateElasticsearchDomainResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateElasticsearchDomainResponse' :: ( { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) } -> {"DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) } ) -> CreateElasticsearchDomainResponse
-newCreateElasticsearchDomainResponse'  customize = (CreateElasticsearchDomainResponse <<< customize) { "DomainStatus": (NullOrUndefined Nothing) }
+newCreateElasticsearchDomainResponse' :: ( { "DomainStatus" :: Maybe (ElasticsearchDomainStatus) } -> {"DomainStatus" :: Maybe (ElasticsearchDomainStatus) } ) -> CreateElasticsearchDomainResponse
+newCreateElasticsearchDomainResponse'  customize = (CreateElasticsearchDomainResponse <<< customize) { "DomainStatus": Nothing }
 
 
 
@@ -239,7 +238,7 @@ newDeleteElasticsearchDomainRequest' _DomainName customize = (DeleteElasticsearc
 
 -- | <p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.</p>
 newtype DeleteElasticsearchDomainResponse = DeleteElasticsearchDomainResponse 
-  { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus)
+  { "DomainStatus" :: Maybe (ElasticsearchDomainStatus)
   }
 derive instance newtypeDeleteElasticsearchDomainResponse :: Newtype DeleteElasticsearchDomainResponse _
 derive instance repGenericDeleteElasticsearchDomainResponse :: Generic DeleteElasticsearchDomainResponse _
@@ -249,12 +248,12 @@ instance encodeDeleteElasticsearchDomainResponse :: Encode DeleteElasticsearchDo
 
 -- | Constructs DeleteElasticsearchDomainResponse from required parameters
 newDeleteElasticsearchDomainResponse :: DeleteElasticsearchDomainResponse
-newDeleteElasticsearchDomainResponse  = DeleteElasticsearchDomainResponse { "DomainStatus": (NullOrUndefined Nothing) }
+newDeleteElasticsearchDomainResponse  = DeleteElasticsearchDomainResponse { "DomainStatus": Nothing }
 
 -- | Constructs DeleteElasticsearchDomainResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteElasticsearchDomainResponse' :: ( { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) } -> {"DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) } ) -> DeleteElasticsearchDomainResponse
-newDeleteElasticsearchDomainResponse'  customize = (DeleteElasticsearchDomainResponse <<< customize) { "DomainStatus": (NullOrUndefined Nothing) }
+newDeleteElasticsearchDomainResponse' :: ( { "DomainStatus" :: Maybe (ElasticsearchDomainStatus) } -> {"DomainStatus" :: Maybe (ElasticsearchDomainStatus) } ) -> DeleteElasticsearchDomainResponse
+newDeleteElasticsearchDomainResponse'  customize = (DeleteElasticsearchDomainResponse <<< customize) { "DomainStatus": Nothing }
 
 
 
@@ -386,7 +385,7 @@ newDescribeElasticsearchDomainsResponse' _DomainStatusList customize = (Describe
 
 -- | <p> Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. </p>
 newtype DescribeElasticsearchInstanceTypeLimitsRequest = DescribeElasticsearchInstanceTypeLimitsRequest 
-  { "DomainName" :: NullOrUndefined (DomainName)
+  { "DomainName" :: Maybe (DomainName)
   , "InstanceType" :: (ESPartitionInstanceType)
   , "ElasticsearchVersion" :: (ElasticsearchVersionString)
   }
@@ -398,18 +397,18 @@ instance encodeDescribeElasticsearchInstanceTypeLimitsRequest :: Encode Describe
 
 -- | Constructs DescribeElasticsearchInstanceTypeLimitsRequest from required parameters
 newDescribeElasticsearchInstanceTypeLimitsRequest :: ElasticsearchVersionString -> ESPartitionInstanceType -> DescribeElasticsearchInstanceTypeLimitsRequest
-newDescribeElasticsearchInstanceTypeLimitsRequest _ElasticsearchVersion _InstanceType = DescribeElasticsearchInstanceTypeLimitsRequest { "ElasticsearchVersion": _ElasticsearchVersion, "InstanceType": _InstanceType, "DomainName": (NullOrUndefined Nothing) }
+newDescribeElasticsearchInstanceTypeLimitsRequest _ElasticsearchVersion _InstanceType = DescribeElasticsearchInstanceTypeLimitsRequest { "ElasticsearchVersion": _ElasticsearchVersion, "InstanceType": _InstanceType, "DomainName": Nothing }
 
 -- | Constructs DescribeElasticsearchInstanceTypeLimitsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeElasticsearchInstanceTypeLimitsRequest' :: ElasticsearchVersionString -> ESPartitionInstanceType -> ( { "DomainName" :: NullOrUndefined (DomainName) , "InstanceType" :: (ESPartitionInstanceType) , "ElasticsearchVersion" :: (ElasticsearchVersionString) } -> {"DomainName" :: NullOrUndefined (DomainName) , "InstanceType" :: (ESPartitionInstanceType) , "ElasticsearchVersion" :: (ElasticsearchVersionString) } ) -> DescribeElasticsearchInstanceTypeLimitsRequest
-newDescribeElasticsearchInstanceTypeLimitsRequest' _ElasticsearchVersion _InstanceType customize = (DescribeElasticsearchInstanceTypeLimitsRequest <<< customize) { "ElasticsearchVersion": _ElasticsearchVersion, "InstanceType": _InstanceType, "DomainName": (NullOrUndefined Nothing) }
+newDescribeElasticsearchInstanceTypeLimitsRequest' :: ElasticsearchVersionString -> ESPartitionInstanceType -> ( { "DomainName" :: Maybe (DomainName) , "InstanceType" :: (ESPartitionInstanceType) , "ElasticsearchVersion" :: (ElasticsearchVersionString) } -> {"DomainName" :: Maybe (DomainName) , "InstanceType" :: (ESPartitionInstanceType) , "ElasticsearchVersion" :: (ElasticsearchVersionString) } ) -> DescribeElasticsearchInstanceTypeLimitsRequest
+newDescribeElasticsearchInstanceTypeLimitsRequest' _ElasticsearchVersion _InstanceType customize = (DescribeElasticsearchInstanceTypeLimitsRequest <<< customize) { "ElasticsearchVersion": _ElasticsearchVersion, "InstanceType": _InstanceType, "DomainName": Nothing }
 
 
 
 -- | <p> Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. </p>
 newtype DescribeElasticsearchInstanceTypeLimitsResponse = DescribeElasticsearchInstanceTypeLimitsResponse 
-  { "LimitsByRole" :: NullOrUndefined (LimitsByRole)
+  { "LimitsByRole" :: Maybe (LimitsByRole)
   }
 derive instance newtypeDescribeElasticsearchInstanceTypeLimitsResponse :: Newtype DescribeElasticsearchInstanceTypeLimitsResponse _
 derive instance repGenericDescribeElasticsearchInstanceTypeLimitsResponse :: Generic DescribeElasticsearchInstanceTypeLimitsResponse _
@@ -419,12 +418,12 @@ instance encodeDescribeElasticsearchInstanceTypeLimitsResponse :: Encode Describ
 
 -- | Constructs DescribeElasticsearchInstanceTypeLimitsResponse from required parameters
 newDescribeElasticsearchInstanceTypeLimitsResponse :: DescribeElasticsearchInstanceTypeLimitsResponse
-newDescribeElasticsearchInstanceTypeLimitsResponse  = DescribeElasticsearchInstanceTypeLimitsResponse { "LimitsByRole": (NullOrUndefined Nothing) }
+newDescribeElasticsearchInstanceTypeLimitsResponse  = DescribeElasticsearchInstanceTypeLimitsResponse { "LimitsByRole": Nothing }
 
 -- | Constructs DescribeElasticsearchInstanceTypeLimitsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeElasticsearchInstanceTypeLimitsResponse' :: ( { "LimitsByRole" :: NullOrUndefined (LimitsByRole) } -> {"LimitsByRole" :: NullOrUndefined (LimitsByRole) } ) -> DescribeElasticsearchInstanceTypeLimitsResponse
-newDescribeElasticsearchInstanceTypeLimitsResponse'  customize = (DescribeElasticsearchInstanceTypeLimitsResponse <<< customize) { "LimitsByRole": (NullOrUndefined Nothing) }
+newDescribeElasticsearchInstanceTypeLimitsResponse' :: ( { "LimitsByRole" :: Maybe (LimitsByRole) } -> {"LimitsByRole" :: Maybe (LimitsByRole) } ) -> DescribeElasticsearchInstanceTypeLimitsResponse
+newDescribeElasticsearchInstanceTypeLimitsResponse'  customize = (DescribeElasticsearchInstanceTypeLimitsResponse <<< customize) { "LimitsByRole": Nothing }
 
 
 
@@ -449,7 +448,7 @@ instance encodeDomainId :: Encode DomainId where encode = genericEncode options
 
 
 newtype DomainInfo = DomainInfo 
-  { "DomainName" :: NullOrUndefined (DomainName)
+  { "DomainName" :: Maybe (DomainName)
   }
 derive instance newtypeDomainInfo :: Newtype DomainInfo _
 derive instance repGenericDomainInfo :: Generic DomainInfo _
@@ -459,12 +458,12 @@ instance encodeDomainInfo :: Encode DomainInfo where encode = genericEncode opti
 
 -- | Constructs DomainInfo from required parameters
 newDomainInfo :: DomainInfo
-newDomainInfo  = DomainInfo { "DomainName": (NullOrUndefined Nothing) }
+newDomainInfo  = DomainInfo { "DomainName": Nothing }
 
 -- | Constructs DomainInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDomainInfo' :: ( { "DomainName" :: NullOrUndefined (DomainName) } -> {"DomainName" :: NullOrUndefined (DomainName) } ) -> DomainInfo
-newDomainInfo'  customize = (DomainInfo <<< customize) { "DomainName": (NullOrUndefined Nothing) }
+newDomainInfo' :: ( { "DomainName" :: Maybe (DomainName) } -> {"DomainName" :: Maybe (DomainName) } ) -> DomainInfo
+newDomainInfo'  customize = (DomainInfo <<< customize) { "DomainName": Nothing }
 
 
 
@@ -500,10 +499,10 @@ instance encodeDomainNameList :: Encode DomainNameList where encode = genericEnc
 
 -- | <p>Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.</p>
 newtype EBSOptions = EBSOptions 
-  { "EBSEnabled" :: NullOrUndefined (Boolean)
-  , "VolumeType" :: NullOrUndefined (VolumeType)
-  , "VolumeSize" :: NullOrUndefined (IntegerClass)
-  , "Iops" :: NullOrUndefined (IntegerClass)
+  { "EBSEnabled" :: Maybe (Boolean)
+  , "VolumeType" :: Maybe (VolumeType)
+  , "VolumeSize" :: Maybe (IntegerClass)
+  , "Iops" :: Maybe (IntegerClass)
   }
 derive instance newtypeEBSOptions :: Newtype EBSOptions _
 derive instance repGenericEBSOptions :: Generic EBSOptions _
@@ -513,12 +512,12 @@ instance encodeEBSOptions :: Encode EBSOptions where encode = genericEncode opti
 
 -- | Constructs EBSOptions from required parameters
 newEBSOptions :: EBSOptions
-newEBSOptions  = EBSOptions { "EBSEnabled": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "VolumeSize": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newEBSOptions  = EBSOptions { "EBSEnabled": Nothing, "Iops": Nothing, "VolumeSize": Nothing, "VolumeType": Nothing }
 
 -- | Constructs EBSOptions's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEBSOptions' :: ( { "EBSEnabled" :: NullOrUndefined (Boolean) , "VolumeType" :: NullOrUndefined (VolumeType) , "VolumeSize" :: NullOrUndefined (IntegerClass) , "Iops" :: NullOrUndefined (IntegerClass) } -> {"EBSEnabled" :: NullOrUndefined (Boolean) , "VolumeType" :: NullOrUndefined (VolumeType) , "VolumeSize" :: NullOrUndefined (IntegerClass) , "Iops" :: NullOrUndefined (IntegerClass) } ) -> EBSOptions
-newEBSOptions'  customize = (EBSOptions <<< customize) { "EBSEnabled": (NullOrUndefined Nothing), "Iops": (NullOrUndefined Nothing), "VolumeSize": (NullOrUndefined Nothing), "VolumeType": (NullOrUndefined Nothing) }
+newEBSOptions' :: ( { "EBSEnabled" :: Maybe (Boolean) , "VolumeType" :: Maybe (VolumeType) , "VolumeSize" :: Maybe (IntegerClass) , "Iops" :: Maybe (IntegerClass) } -> {"EBSEnabled" :: Maybe (Boolean) , "VolumeType" :: Maybe (VolumeType) , "VolumeSize" :: Maybe (IntegerClass) , "Iops" :: Maybe (IntegerClass) } ) -> EBSOptions
+newEBSOptions'  customize = (EBSOptions <<< customize) { "EBSEnabled": Nothing, "Iops": Nothing, "VolumeSize": Nothing, "VolumeType": Nothing }
 
 
 
@@ -555,12 +554,12 @@ instance encodeESPartitionInstanceType :: Encode ESPartitionInstanceType where e
 
 -- | <p>Specifies the configuration for the domain cluster, such as the type and number of instances.</p>
 newtype ElasticsearchClusterConfig = ElasticsearchClusterConfig 
-  { "InstanceType" :: NullOrUndefined (ESPartitionInstanceType)
-  , "InstanceCount" :: NullOrUndefined (IntegerClass)
-  , "DedicatedMasterEnabled" :: NullOrUndefined (Boolean)
-  , "ZoneAwarenessEnabled" :: NullOrUndefined (Boolean)
-  , "DedicatedMasterType" :: NullOrUndefined (ESPartitionInstanceType)
-  , "DedicatedMasterCount" :: NullOrUndefined (IntegerClass)
+  { "InstanceType" :: Maybe (ESPartitionInstanceType)
+  , "InstanceCount" :: Maybe (IntegerClass)
+  , "DedicatedMasterEnabled" :: Maybe (Boolean)
+  , "ZoneAwarenessEnabled" :: Maybe (Boolean)
+  , "DedicatedMasterType" :: Maybe (ESPartitionInstanceType)
+  , "DedicatedMasterCount" :: Maybe (IntegerClass)
   }
 derive instance newtypeElasticsearchClusterConfig :: Newtype ElasticsearchClusterConfig _
 derive instance repGenericElasticsearchClusterConfig :: Generic ElasticsearchClusterConfig _
@@ -570,12 +569,12 @@ instance encodeElasticsearchClusterConfig :: Encode ElasticsearchClusterConfig w
 
 -- | Constructs ElasticsearchClusterConfig from required parameters
 newElasticsearchClusterConfig :: ElasticsearchClusterConfig
-newElasticsearchClusterConfig  = ElasticsearchClusterConfig { "DedicatedMasterCount": (NullOrUndefined Nothing), "DedicatedMasterEnabled": (NullOrUndefined Nothing), "DedicatedMasterType": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "ZoneAwarenessEnabled": (NullOrUndefined Nothing) }
+newElasticsearchClusterConfig  = ElasticsearchClusterConfig { "DedicatedMasterCount": Nothing, "DedicatedMasterEnabled": Nothing, "DedicatedMasterType": Nothing, "InstanceCount": Nothing, "InstanceType": Nothing, "ZoneAwarenessEnabled": Nothing }
 
 -- | Constructs ElasticsearchClusterConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newElasticsearchClusterConfig' :: ( { "InstanceType" :: NullOrUndefined (ESPartitionInstanceType) , "InstanceCount" :: NullOrUndefined (IntegerClass) , "DedicatedMasterEnabled" :: NullOrUndefined (Boolean) , "ZoneAwarenessEnabled" :: NullOrUndefined (Boolean) , "DedicatedMasterType" :: NullOrUndefined (ESPartitionInstanceType) , "DedicatedMasterCount" :: NullOrUndefined (IntegerClass) } -> {"InstanceType" :: NullOrUndefined (ESPartitionInstanceType) , "InstanceCount" :: NullOrUndefined (IntegerClass) , "DedicatedMasterEnabled" :: NullOrUndefined (Boolean) , "ZoneAwarenessEnabled" :: NullOrUndefined (Boolean) , "DedicatedMasterType" :: NullOrUndefined (ESPartitionInstanceType) , "DedicatedMasterCount" :: NullOrUndefined (IntegerClass) } ) -> ElasticsearchClusterConfig
-newElasticsearchClusterConfig'  customize = (ElasticsearchClusterConfig <<< customize) { "DedicatedMasterCount": (NullOrUndefined Nothing), "DedicatedMasterEnabled": (NullOrUndefined Nothing), "DedicatedMasterType": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "ZoneAwarenessEnabled": (NullOrUndefined Nothing) }
+newElasticsearchClusterConfig' :: ( { "InstanceType" :: Maybe (ESPartitionInstanceType) , "InstanceCount" :: Maybe (IntegerClass) , "DedicatedMasterEnabled" :: Maybe (Boolean) , "ZoneAwarenessEnabled" :: Maybe (Boolean) , "DedicatedMasterType" :: Maybe (ESPartitionInstanceType) , "DedicatedMasterCount" :: Maybe (IntegerClass) } -> {"InstanceType" :: Maybe (ESPartitionInstanceType) , "InstanceCount" :: Maybe (IntegerClass) , "DedicatedMasterEnabled" :: Maybe (Boolean) , "ZoneAwarenessEnabled" :: Maybe (Boolean) , "DedicatedMasterType" :: Maybe (ESPartitionInstanceType) , "DedicatedMasterCount" :: Maybe (IntegerClass) } ) -> ElasticsearchClusterConfig
+newElasticsearchClusterConfig'  customize = (ElasticsearchClusterConfig <<< customize) { "DedicatedMasterCount": Nothing, "DedicatedMasterEnabled": Nothing, "DedicatedMasterType": Nothing, "InstanceCount": Nothing, "InstanceType": Nothing, "ZoneAwarenessEnabled": Nothing }
 
 
 
@@ -603,15 +602,15 @@ newElasticsearchClusterConfigStatus' _Options _Status customize = (Elasticsearch
 
 -- | <p>The configuration of an Elasticsearch domain.</p>
 newtype ElasticsearchDomainConfig = ElasticsearchDomainConfig 
-  { "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionStatus)
-  , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfigStatus)
-  , "EBSOptions" :: NullOrUndefined (EBSOptionsStatus)
-  , "AccessPolicies" :: NullOrUndefined (AccessPoliciesStatus)
-  , "SnapshotOptions" :: NullOrUndefined (SnapshotOptionsStatus)
-  , "VPCOptions" :: NullOrUndefined (VPCDerivedInfoStatus)
-  , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptionsStatus)
-  , "AdvancedOptions" :: NullOrUndefined (AdvancedOptionsStatus)
-  , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptionsStatus)
+  { "ElasticsearchVersion" :: Maybe (ElasticsearchVersionStatus)
+  , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfigStatus)
+  , "EBSOptions" :: Maybe (EBSOptionsStatus)
+  , "AccessPolicies" :: Maybe (AccessPoliciesStatus)
+  , "SnapshotOptions" :: Maybe (SnapshotOptionsStatus)
+  , "VPCOptions" :: Maybe (VPCDerivedInfoStatus)
+  , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptionsStatus)
+  , "AdvancedOptions" :: Maybe (AdvancedOptionsStatus)
+  , "LogPublishingOptions" :: Maybe (LogPublishingOptionsStatus)
   }
 derive instance newtypeElasticsearchDomainConfig :: Newtype ElasticsearchDomainConfig _
 derive instance repGenericElasticsearchDomainConfig :: Generic ElasticsearchDomainConfig _
@@ -621,12 +620,12 @@ instance encodeElasticsearchDomainConfig :: Encode ElasticsearchDomainConfig whe
 
 -- | Constructs ElasticsearchDomainConfig from required parameters
 newElasticsearchDomainConfig :: ElasticsearchDomainConfig
-newElasticsearchDomainConfig  = ElasticsearchDomainConfig { "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchClusterConfig": (NullOrUndefined Nothing), "ElasticsearchVersion": (NullOrUndefined Nothing), "EncryptionAtRestOptions": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newElasticsearchDomainConfig  = ElasticsearchDomainConfig { "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "EBSOptions": Nothing, "ElasticsearchClusterConfig": Nothing, "ElasticsearchVersion": Nothing, "EncryptionAtRestOptions": Nothing, "LogPublishingOptions": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 -- | Constructs ElasticsearchDomainConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newElasticsearchDomainConfig' :: ( { "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionStatus) , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfigStatus) , "EBSOptions" :: NullOrUndefined (EBSOptionsStatus) , "AccessPolicies" :: NullOrUndefined (AccessPoliciesStatus) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptionsStatus) , "VPCOptions" :: NullOrUndefined (VPCDerivedInfoStatus) , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptionsStatus) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptionsStatus) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptionsStatus) } -> {"ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionStatus) , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfigStatus) , "EBSOptions" :: NullOrUndefined (EBSOptionsStatus) , "AccessPolicies" :: NullOrUndefined (AccessPoliciesStatus) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptionsStatus) , "VPCOptions" :: NullOrUndefined (VPCDerivedInfoStatus) , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptionsStatus) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptionsStatus) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptionsStatus) } ) -> ElasticsearchDomainConfig
-newElasticsearchDomainConfig'  customize = (ElasticsearchDomainConfig <<< customize) { "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchClusterConfig": (NullOrUndefined Nothing), "ElasticsearchVersion": (NullOrUndefined Nothing), "EncryptionAtRestOptions": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newElasticsearchDomainConfig' :: ( { "ElasticsearchVersion" :: Maybe (ElasticsearchVersionStatus) , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfigStatus) , "EBSOptions" :: Maybe (EBSOptionsStatus) , "AccessPolicies" :: Maybe (AccessPoliciesStatus) , "SnapshotOptions" :: Maybe (SnapshotOptionsStatus) , "VPCOptions" :: Maybe (VPCDerivedInfoStatus) , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptionsStatus) , "AdvancedOptions" :: Maybe (AdvancedOptionsStatus) , "LogPublishingOptions" :: Maybe (LogPublishingOptionsStatus) } -> {"ElasticsearchVersion" :: Maybe (ElasticsearchVersionStatus) , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfigStatus) , "EBSOptions" :: Maybe (EBSOptionsStatus) , "AccessPolicies" :: Maybe (AccessPoliciesStatus) , "SnapshotOptions" :: Maybe (SnapshotOptionsStatus) , "VPCOptions" :: Maybe (VPCDerivedInfoStatus) , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptionsStatus) , "AdvancedOptions" :: Maybe (AdvancedOptionsStatus) , "LogPublishingOptions" :: Maybe (LogPublishingOptionsStatus) } ) -> ElasticsearchDomainConfig
+newElasticsearchDomainConfig'  customize = (ElasticsearchDomainConfig <<< customize) { "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "EBSOptions": Nothing, "ElasticsearchClusterConfig": Nothing, "ElasticsearchVersion": Nothing, "EncryptionAtRestOptions": Nothing, "LogPublishingOptions": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 
 
@@ -635,20 +634,20 @@ newtype ElasticsearchDomainStatus = ElasticsearchDomainStatus
   { "DomainId" :: (DomainId)
   , "DomainName" :: (DomainName)
   , "ARN" :: (ARN)
-  , "Created" :: NullOrUndefined (Boolean)
-  , "Deleted" :: NullOrUndefined (Boolean)
-  , "Endpoint" :: NullOrUndefined (ServiceUrl)
-  , "Endpoints" :: NullOrUndefined (EndpointsMap)
-  , "Processing" :: NullOrUndefined (Boolean)
-  , "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString)
+  , "Created" :: Maybe (Boolean)
+  , "Deleted" :: Maybe (Boolean)
+  , "Endpoint" :: Maybe (ServiceUrl)
+  , "Endpoints" :: Maybe (EndpointsMap)
+  , "Processing" :: Maybe (Boolean)
+  , "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString)
   , "ElasticsearchClusterConfig" :: (ElasticsearchClusterConfig)
-  , "EBSOptions" :: NullOrUndefined (EBSOptions)
-  , "AccessPolicies" :: NullOrUndefined (PolicyDocument)
-  , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions)
-  , "VPCOptions" :: NullOrUndefined (VPCDerivedInfo)
-  , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions)
-  , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions)
-  , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions)
+  , "EBSOptions" :: Maybe (EBSOptions)
+  , "AccessPolicies" :: Maybe (PolicyDocument)
+  , "SnapshotOptions" :: Maybe (SnapshotOptions)
+  , "VPCOptions" :: Maybe (VPCDerivedInfo)
+  , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions)
+  , "AdvancedOptions" :: Maybe (AdvancedOptions)
+  , "LogPublishingOptions" :: Maybe (LogPublishingOptions)
   }
 derive instance newtypeElasticsearchDomainStatus :: Newtype ElasticsearchDomainStatus _
 derive instance repGenericElasticsearchDomainStatus :: Generic ElasticsearchDomainStatus _
@@ -658,12 +657,12 @@ instance encodeElasticsearchDomainStatus :: Encode ElasticsearchDomainStatus whe
 
 -- | Constructs ElasticsearchDomainStatus from required parameters
 newElasticsearchDomainStatus :: ARN -> DomainId -> DomainName -> ElasticsearchClusterConfig -> ElasticsearchDomainStatus
-newElasticsearchDomainStatus _ARN _DomainId _DomainName _ElasticsearchClusterConfig = ElasticsearchDomainStatus { "ARN": _ARN, "DomainId": _DomainId, "DomainName": _DomainName, "ElasticsearchClusterConfig": _ElasticsearchClusterConfig, "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "Created": (NullOrUndefined Nothing), "Deleted": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchVersion": (NullOrUndefined Nothing), "EncryptionAtRestOptions": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "Endpoints": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "Processing": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newElasticsearchDomainStatus _ARN _DomainId _DomainName _ElasticsearchClusterConfig = ElasticsearchDomainStatus { "ARN": _ARN, "DomainId": _DomainId, "DomainName": _DomainName, "ElasticsearchClusterConfig": _ElasticsearchClusterConfig, "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "Created": Nothing, "Deleted": Nothing, "EBSOptions": Nothing, "ElasticsearchVersion": Nothing, "EncryptionAtRestOptions": Nothing, "Endpoint": Nothing, "Endpoints": Nothing, "LogPublishingOptions": Nothing, "Processing": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 -- | Constructs ElasticsearchDomainStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newElasticsearchDomainStatus' :: ARN -> DomainId -> DomainName -> ElasticsearchClusterConfig -> ( { "DomainId" :: (DomainId) , "DomainName" :: (DomainName) , "ARN" :: (ARN) , "Created" :: NullOrUndefined (Boolean) , "Deleted" :: NullOrUndefined (Boolean) , "Endpoint" :: NullOrUndefined (ServiceUrl) , "Endpoints" :: NullOrUndefined (EndpointsMap) , "Processing" :: NullOrUndefined (Boolean) , "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: (ElasticsearchClusterConfig) , "EBSOptions" :: NullOrUndefined (EBSOptions) , "AccessPolicies" :: NullOrUndefined (PolicyDocument) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions) , "VPCOptions" :: NullOrUndefined (VPCDerivedInfo) , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } -> {"DomainId" :: (DomainId) , "DomainName" :: (DomainName) , "ARN" :: (ARN) , "Created" :: NullOrUndefined (Boolean) , "Deleted" :: NullOrUndefined (Boolean) , "Endpoint" :: NullOrUndefined (ServiceUrl) , "Endpoints" :: NullOrUndefined (EndpointsMap) , "Processing" :: NullOrUndefined (Boolean) , "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: (ElasticsearchClusterConfig) , "EBSOptions" :: NullOrUndefined (EBSOptions) , "AccessPolicies" :: NullOrUndefined (PolicyDocument) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions) , "VPCOptions" :: NullOrUndefined (VPCDerivedInfo) , "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } ) -> ElasticsearchDomainStatus
-newElasticsearchDomainStatus' _ARN _DomainId _DomainName _ElasticsearchClusterConfig customize = (ElasticsearchDomainStatus <<< customize) { "ARN": _ARN, "DomainId": _DomainId, "DomainName": _DomainName, "ElasticsearchClusterConfig": _ElasticsearchClusterConfig, "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "Created": (NullOrUndefined Nothing), "Deleted": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchVersion": (NullOrUndefined Nothing), "EncryptionAtRestOptions": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "Endpoints": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "Processing": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newElasticsearchDomainStatus' :: ARN -> DomainId -> DomainName -> ElasticsearchClusterConfig -> ( { "DomainId" :: (DomainId) , "DomainName" :: (DomainName) , "ARN" :: (ARN) , "Created" :: Maybe (Boolean) , "Deleted" :: Maybe (Boolean) , "Endpoint" :: Maybe (ServiceUrl) , "Endpoints" :: Maybe (EndpointsMap) , "Processing" :: Maybe (Boolean) , "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: (ElasticsearchClusterConfig) , "EBSOptions" :: Maybe (EBSOptions) , "AccessPolicies" :: Maybe (PolicyDocument) , "SnapshotOptions" :: Maybe (SnapshotOptions) , "VPCOptions" :: Maybe (VPCDerivedInfo) , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions) , "AdvancedOptions" :: Maybe (AdvancedOptions) , "LogPublishingOptions" :: Maybe (LogPublishingOptions) } -> {"DomainId" :: (DomainId) , "DomainName" :: (DomainName) , "ARN" :: (ARN) , "Created" :: Maybe (Boolean) , "Deleted" :: Maybe (Boolean) , "Endpoint" :: Maybe (ServiceUrl) , "Endpoints" :: Maybe (EndpointsMap) , "Processing" :: Maybe (Boolean) , "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString) , "ElasticsearchClusterConfig" :: (ElasticsearchClusterConfig) , "EBSOptions" :: Maybe (EBSOptions) , "AccessPolicies" :: Maybe (PolicyDocument) , "SnapshotOptions" :: Maybe (SnapshotOptions) , "VPCOptions" :: Maybe (VPCDerivedInfo) , "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions) , "AdvancedOptions" :: Maybe (AdvancedOptions) , "LogPublishingOptions" :: Maybe (LogPublishingOptions) } ) -> ElasticsearchDomainStatus
+newElasticsearchDomainStatus' _ARN _DomainId _DomainName _ElasticsearchClusterConfig customize = (ElasticsearchDomainStatus <<< customize) { "ARN": _ARN, "DomainId": _DomainId, "DomainName": _DomainName, "ElasticsearchClusterConfig": _ElasticsearchClusterConfig, "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "Created": Nothing, "Deleted": Nothing, "EBSOptions": Nothing, "ElasticsearchVersion": Nothing, "EncryptionAtRestOptions": Nothing, "Endpoint": Nothing, "Endpoints": Nothing, "LogPublishingOptions": Nothing, "Processing": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 
 
@@ -730,8 +729,8 @@ instance encodeElasticsearchVersionString :: Encode ElasticsearchVersionString w
 
 -- | <p>Specifies the Encryption At Rest Options.</p>
 newtype EncryptionAtRestOptions = EncryptionAtRestOptions 
-  { "Enabled" :: NullOrUndefined (Boolean)
-  , "KmsKeyId" :: NullOrUndefined (KmsKeyId)
+  { "Enabled" :: Maybe (Boolean)
+  , "KmsKeyId" :: Maybe (KmsKeyId)
   }
 derive instance newtypeEncryptionAtRestOptions :: Newtype EncryptionAtRestOptions _
 derive instance repGenericEncryptionAtRestOptions :: Generic EncryptionAtRestOptions _
@@ -741,12 +740,12 @@ instance encodeEncryptionAtRestOptions :: Encode EncryptionAtRestOptions where e
 
 -- | Constructs EncryptionAtRestOptions from required parameters
 newEncryptionAtRestOptions :: EncryptionAtRestOptions
-newEncryptionAtRestOptions  = EncryptionAtRestOptions { "Enabled": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing) }
+newEncryptionAtRestOptions  = EncryptionAtRestOptions { "Enabled": Nothing, "KmsKeyId": Nothing }
 
 -- | Constructs EncryptionAtRestOptions's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEncryptionAtRestOptions' :: ( { "Enabled" :: NullOrUndefined (Boolean) , "KmsKeyId" :: NullOrUndefined (KmsKeyId) } -> {"Enabled" :: NullOrUndefined (Boolean) , "KmsKeyId" :: NullOrUndefined (KmsKeyId) } ) -> EncryptionAtRestOptions
-newEncryptionAtRestOptions'  customize = (EncryptionAtRestOptions <<< customize) { "Enabled": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing) }
+newEncryptionAtRestOptions' :: ( { "Enabled" :: Maybe (Boolean) , "KmsKeyId" :: Maybe (KmsKeyId) } -> {"Enabled" :: Maybe (Boolean) , "KmsKeyId" :: Maybe (KmsKeyId) } ) -> EncryptionAtRestOptions
+newEncryptionAtRestOptions'  customize = (EncryptionAtRestOptions <<< customize) { "Enabled": Nothing, "KmsKeyId": Nothing }
 
 
 
@@ -792,8 +791,8 @@ instance encodeErrorMessage :: Encode ErrorMessage where encode = genericEncode 
 
 -- | <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
 newtype InstanceCountLimits = InstanceCountLimits 
-  { "MinimumInstanceCount" :: NullOrUndefined (MinimumInstanceCount)
-  , "MaximumInstanceCount" :: NullOrUndefined (MaximumInstanceCount)
+  { "MinimumInstanceCount" :: Maybe (MinimumInstanceCount)
+  , "MaximumInstanceCount" :: Maybe (MaximumInstanceCount)
   }
 derive instance newtypeInstanceCountLimits :: Newtype InstanceCountLimits _
 derive instance repGenericInstanceCountLimits :: Generic InstanceCountLimits _
@@ -803,18 +802,18 @@ instance encodeInstanceCountLimits :: Encode InstanceCountLimits where encode = 
 
 -- | Constructs InstanceCountLimits from required parameters
 newInstanceCountLimits :: InstanceCountLimits
-newInstanceCountLimits  = InstanceCountLimits { "MaximumInstanceCount": (NullOrUndefined Nothing), "MinimumInstanceCount": (NullOrUndefined Nothing) }
+newInstanceCountLimits  = InstanceCountLimits { "MaximumInstanceCount": Nothing, "MinimumInstanceCount": Nothing }
 
 -- | Constructs InstanceCountLimits's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceCountLimits' :: ( { "MinimumInstanceCount" :: NullOrUndefined (MinimumInstanceCount) , "MaximumInstanceCount" :: NullOrUndefined (MaximumInstanceCount) } -> {"MinimumInstanceCount" :: NullOrUndefined (MinimumInstanceCount) , "MaximumInstanceCount" :: NullOrUndefined (MaximumInstanceCount) } ) -> InstanceCountLimits
-newInstanceCountLimits'  customize = (InstanceCountLimits <<< customize) { "MaximumInstanceCount": (NullOrUndefined Nothing), "MinimumInstanceCount": (NullOrUndefined Nothing) }
+newInstanceCountLimits' :: ( { "MinimumInstanceCount" :: Maybe (MinimumInstanceCount) , "MaximumInstanceCount" :: Maybe (MaximumInstanceCount) } -> {"MinimumInstanceCount" :: Maybe (MinimumInstanceCount) , "MaximumInstanceCount" :: Maybe (MaximumInstanceCount) } ) -> InstanceCountLimits
+newInstanceCountLimits'  customize = (InstanceCountLimits <<< customize) { "MaximumInstanceCount": Nothing, "MinimumInstanceCount": Nothing }
 
 
 
 -- | <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
 newtype InstanceLimits = InstanceLimits 
-  { "InstanceCountLimits" :: NullOrUndefined (InstanceCountLimits)
+  { "InstanceCountLimits" :: Maybe (InstanceCountLimits)
   }
 derive instance newtypeInstanceLimits :: Newtype InstanceLimits _
 derive instance repGenericInstanceLimits :: Generic InstanceLimits _
@@ -824,12 +823,12 @@ instance encodeInstanceLimits :: Encode InstanceLimits where encode = genericEnc
 
 -- | Constructs InstanceLimits from required parameters
 newInstanceLimits :: InstanceLimits
-newInstanceLimits  = InstanceLimits { "InstanceCountLimits": (NullOrUndefined Nothing) }
+newInstanceLimits  = InstanceLimits { "InstanceCountLimits": Nothing }
 
 -- | Constructs InstanceLimits's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceLimits' :: ( { "InstanceCountLimits" :: NullOrUndefined (InstanceCountLimits) } -> {"InstanceCountLimits" :: NullOrUndefined (InstanceCountLimits) } ) -> InstanceLimits
-newInstanceLimits'  customize = (InstanceLimits <<< customize) { "InstanceCountLimits": (NullOrUndefined Nothing) }
+newInstanceLimits' :: ( { "InstanceCountLimits" :: Maybe (InstanceCountLimits) } -> {"InstanceCountLimits" :: Maybe (InstanceCountLimits) } ) -> InstanceLimits
+newInstanceLimits'  customize = (InstanceLimits <<< customize) { "InstanceCountLimits": Nothing }
 
 
 
@@ -919,9 +918,9 @@ instance encodeLimitValueList :: Encode LimitValueList where encode = genericEnc
 
 -- | <p> Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code> </p>
 newtype Limits = Limits 
-  { "StorageTypes" :: NullOrUndefined (StorageTypeList)
-  , "InstanceLimits" :: NullOrUndefined (InstanceLimits)
-  , "AdditionalLimits" :: NullOrUndefined (AdditionalLimitList)
+  { "StorageTypes" :: Maybe (StorageTypeList)
+  , "InstanceLimits" :: Maybe (InstanceLimits)
+  , "AdditionalLimits" :: Maybe (AdditionalLimitList)
   }
 derive instance newtypeLimits :: Newtype Limits _
 derive instance repGenericLimits :: Generic Limits _
@@ -931,12 +930,12 @@ instance encodeLimits :: Encode Limits where encode = genericEncode options
 
 -- | Constructs Limits from required parameters
 newLimits :: Limits
-newLimits  = Limits { "AdditionalLimits": (NullOrUndefined Nothing), "InstanceLimits": (NullOrUndefined Nothing), "StorageTypes": (NullOrUndefined Nothing) }
+newLimits  = Limits { "AdditionalLimits": Nothing, "InstanceLimits": Nothing, "StorageTypes": Nothing }
 
 -- | Constructs Limits's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimits' :: ( { "StorageTypes" :: NullOrUndefined (StorageTypeList) , "InstanceLimits" :: NullOrUndefined (InstanceLimits) , "AdditionalLimits" :: NullOrUndefined (AdditionalLimitList) } -> {"StorageTypes" :: NullOrUndefined (StorageTypeList) , "InstanceLimits" :: NullOrUndefined (InstanceLimits) , "AdditionalLimits" :: NullOrUndefined (AdditionalLimitList) } ) -> Limits
-newLimits'  customize = (Limits <<< customize) { "AdditionalLimits": (NullOrUndefined Nothing), "InstanceLimits": (NullOrUndefined Nothing), "StorageTypes": (NullOrUndefined Nothing) }
+newLimits' :: ( { "StorageTypes" :: Maybe (StorageTypeList) , "InstanceLimits" :: Maybe (InstanceLimits) , "AdditionalLimits" :: Maybe (AdditionalLimitList) } -> {"StorageTypes" :: Maybe (StorageTypeList) , "InstanceLimits" :: Maybe (InstanceLimits) , "AdditionalLimits" :: Maybe (AdditionalLimitList) } ) -> Limits
+newLimits'  customize = (Limits <<< customize) { "AdditionalLimits": Nothing, "InstanceLimits": Nothing, "StorageTypes": Nothing }
 
 
 
@@ -952,7 +951,7 @@ instance encodeLimitsByRole :: Encode LimitsByRole where encode = genericEncode 
 
 -- | <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account.</p>
 newtype ListDomainNamesResponse = ListDomainNamesResponse 
-  { "DomainNames" :: NullOrUndefined (DomainInfoList)
+  { "DomainNames" :: Maybe (DomainInfoList)
   }
 derive instance newtypeListDomainNamesResponse :: Newtype ListDomainNamesResponse _
 derive instance repGenericListDomainNamesResponse :: Generic ListDomainNamesResponse _
@@ -962,21 +961,21 @@ instance encodeListDomainNamesResponse :: Encode ListDomainNamesResponse where e
 
 -- | Constructs ListDomainNamesResponse from required parameters
 newListDomainNamesResponse :: ListDomainNamesResponse
-newListDomainNamesResponse  = ListDomainNamesResponse { "DomainNames": (NullOrUndefined Nothing) }
+newListDomainNamesResponse  = ListDomainNamesResponse { "DomainNames": Nothing }
 
 -- | Constructs ListDomainNamesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDomainNamesResponse' :: ( { "DomainNames" :: NullOrUndefined (DomainInfoList) } -> {"DomainNames" :: NullOrUndefined (DomainInfoList) } ) -> ListDomainNamesResponse
-newListDomainNamesResponse'  customize = (ListDomainNamesResponse <<< customize) { "DomainNames": (NullOrUndefined Nothing) }
+newListDomainNamesResponse' :: ( { "DomainNames" :: Maybe (DomainInfoList) } -> {"DomainNames" :: Maybe (DomainInfoList) } ) -> ListDomainNamesResponse
+newListDomainNamesResponse'  customize = (ListDomainNamesResponse <<< customize) { "DomainNames": Nothing }
 
 
 
 -- | <p> Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. </p>
 newtype ListElasticsearchInstanceTypesRequest = ListElasticsearchInstanceTypesRequest 
   { "ElasticsearchVersion" :: (ElasticsearchVersionString)
-  , "DomainName" :: NullOrUndefined (DomainName)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "DomainName" :: Maybe (DomainName)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListElasticsearchInstanceTypesRequest :: Newtype ListElasticsearchInstanceTypesRequest _
 derive instance repGenericListElasticsearchInstanceTypesRequest :: Generic ListElasticsearchInstanceTypesRequest _
@@ -986,19 +985,19 @@ instance encodeListElasticsearchInstanceTypesRequest :: Encode ListElasticsearch
 
 -- | Constructs ListElasticsearchInstanceTypesRequest from required parameters
 newListElasticsearchInstanceTypesRequest :: ElasticsearchVersionString -> ListElasticsearchInstanceTypesRequest
-newListElasticsearchInstanceTypesRequest _ElasticsearchVersion = ListElasticsearchInstanceTypesRequest { "ElasticsearchVersion": _ElasticsearchVersion, "DomainName": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchInstanceTypesRequest _ElasticsearchVersion = ListElasticsearchInstanceTypesRequest { "ElasticsearchVersion": _ElasticsearchVersion, "DomainName": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListElasticsearchInstanceTypesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListElasticsearchInstanceTypesRequest' :: ElasticsearchVersionString -> ( { "ElasticsearchVersion" :: (ElasticsearchVersionString) , "DomainName" :: NullOrUndefined (DomainName) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ElasticsearchVersion" :: (ElasticsearchVersionString) , "DomainName" :: NullOrUndefined (DomainName) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListElasticsearchInstanceTypesRequest
-newListElasticsearchInstanceTypesRequest' _ElasticsearchVersion customize = (ListElasticsearchInstanceTypesRequest <<< customize) { "ElasticsearchVersion": _ElasticsearchVersion, "DomainName": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchInstanceTypesRequest' :: ElasticsearchVersionString -> ( { "ElasticsearchVersion" :: (ElasticsearchVersionString) , "DomainName" :: Maybe (DomainName) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"ElasticsearchVersion" :: (ElasticsearchVersionString) , "DomainName" :: Maybe (DomainName) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> ListElasticsearchInstanceTypesRequest
+newListElasticsearchInstanceTypesRequest' _ElasticsearchVersion customize = (ListElasticsearchInstanceTypesRequest <<< customize) { "ElasticsearchVersion": _ElasticsearchVersion, "DomainName": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p> Container for the parameters returned by <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. </p>
 newtype ListElasticsearchInstanceTypesResponse = ListElasticsearchInstanceTypesResponse 
-  { "ElasticsearchInstanceTypes" :: NullOrUndefined (ElasticsearchInstanceTypeList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ElasticsearchInstanceTypes" :: Maybe (ElasticsearchInstanceTypeList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListElasticsearchInstanceTypesResponse :: Newtype ListElasticsearchInstanceTypesResponse _
 derive instance repGenericListElasticsearchInstanceTypesResponse :: Generic ListElasticsearchInstanceTypesResponse _
@@ -1008,19 +1007,19 @@ instance encodeListElasticsearchInstanceTypesResponse :: Encode ListElasticsearc
 
 -- | Constructs ListElasticsearchInstanceTypesResponse from required parameters
 newListElasticsearchInstanceTypesResponse :: ListElasticsearchInstanceTypesResponse
-newListElasticsearchInstanceTypesResponse  = ListElasticsearchInstanceTypesResponse { "ElasticsearchInstanceTypes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchInstanceTypesResponse  = ListElasticsearchInstanceTypesResponse { "ElasticsearchInstanceTypes": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListElasticsearchInstanceTypesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListElasticsearchInstanceTypesResponse' :: ( { "ElasticsearchInstanceTypes" :: NullOrUndefined (ElasticsearchInstanceTypeList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ElasticsearchInstanceTypes" :: NullOrUndefined (ElasticsearchInstanceTypeList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListElasticsearchInstanceTypesResponse
-newListElasticsearchInstanceTypesResponse'  customize = (ListElasticsearchInstanceTypesResponse <<< customize) { "ElasticsearchInstanceTypes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchInstanceTypesResponse' :: ( { "ElasticsearchInstanceTypes" :: Maybe (ElasticsearchInstanceTypeList) , "NextToken" :: Maybe (NextToken) } -> {"ElasticsearchInstanceTypes" :: Maybe (ElasticsearchInstanceTypeList) , "NextToken" :: Maybe (NextToken) } ) -> ListElasticsearchInstanceTypesResponse
+newListElasticsearchInstanceTypesResponse'  customize = (ListElasticsearchInstanceTypesResponse <<< customize) { "ElasticsearchInstanceTypes": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p> Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call. </p> <p> Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p> </p>
 newtype ListElasticsearchVersionsRequest = ListElasticsearchVersionsRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListElasticsearchVersionsRequest :: Newtype ListElasticsearchVersionsRequest _
 derive instance repGenericListElasticsearchVersionsRequest :: Generic ListElasticsearchVersionsRequest _
@@ -1030,19 +1029,19 @@ instance encodeListElasticsearchVersionsRequest :: Encode ListElasticsearchVersi
 
 -- | Constructs ListElasticsearchVersionsRequest from required parameters
 newListElasticsearchVersionsRequest :: ListElasticsearchVersionsRequest
-newListElasticsearchVersionsRequest  = ListElasticsearchVersionsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchVersionsRequest  = ListElasticsearchVersionsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListElasticsearchVersionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListElasticsearchVersionsRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListElasticsearchVersionsRequest
-newListElasticsearchVersionsRequest'  customize = (ListElasticsearchVersionsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchVersionsRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> ListElasticsearchVersionsRequest
+newListElasticsearchVersionsRequest'  customize = (ListElasticsearchVersionsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p> Container for the parameters for response received from <code> <a>ListElasticsearchVersions</a> </code> operation. </p>
 newtype ListElasticsearchVersionsResponse = ListElasticsearchVersionsResponse 
-  { "ElasticsearchVersions" :: NullOrUndefined (ElasticsearchVersionList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ElasticsearchVersions" :: Maybe (ElasticsearchVersionList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListElasticsearchVersionsResponse :: Newtype ListElasticsearchVersionsResponse _
 derive instance repGenericListElasticsearchVersionsResponse :: Generic ListElasticsearchVersionsResponse _
@@ -1052,12 +1051,12 @@ instance encodeListElasticsearchVersionsResponse :: Encode ListElasticsearchVers
 
 -- | Constructs ListElasticsearchVersionsResponse from required parameters
 newListElasticsearchVersionsResponse :: ListElasticsearchVersionsResponse
-newListElasticsearchVersionsResponse  = ListElasticsearchVersionsResponse { "ElasticsearchVersions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchVersionsResponse  = ListElasticsearchVersionsResponse { "ElasticsearchVersions": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListElasticsearchVersionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListElasticsearchVersionsResponse' :: ( { "ElasticsearchVersions" :: NullOrUndefined (ElasticsearchVersionList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ElasticsearchVersions" :: NullOrUndefined (ElasticsearchVersionList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListElasticsearchVersionsResponse
-newListElasticsearchVersionsResponse'  customize = (ListElasticsearchVersionsResponse <<< customize) { "ElasticsearchVersions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListElasticsearchVersionsResponse' :: ( { "ElasticsearchVersions" :: Maybe (ElasticsearchVersionList) , "NextToken" :: Maybe (NextToken) } -> {"ElasticsearchVersions" :: Maybe (ElasticsearchVersionList) , "NextToken" :: Maybe (NextToken) } ) -> ListElasticsearchVersionsResponse
+newListElasticsearchVersionsResponse'  customize = (ListElasticsearchVersionsResponse <<< customize) { "ElasticsearchVersions": Nothing, "NextToken": Nothing }
 
 
 
@@ -1084,7 +1083,7 @@ newListTagsRequest' _ARN customize = (ListTagsRequest <<< customize) { "ARN": _A
 
 -- | <p>The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.</p>
 newtype ListTagsResponse = ListTagsResponse 
-  { "TagList" :: NullOrUndefined (TagList)
+  { "TagList" :: Maybe (TagList)
   }
 derive instance newtypeListTagsResponse :: Newtype ListTagsResponse _
 derive instance repGenericListTagsResponse :: Generic ListTagsResponse _
@@ -1094,19 +1093,19 @@ instance encodeListTagsResponse :: Encode ListTagsResponse where encode = generi
 
 -- | Constructs ListTagsResponse from required parameters
 newListTagsResponse :: ListTagsResponse
-newListTagsResponse  = ListTagsResponse { "TagList": (NullOrUndefined Nothing) }
+newListTagsResponse  = ListTagsResponse { "TagList": Nothing }
 
 -- | Constructs ListTagsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsResponse' :: ( { "TagList" :: NullOrUndefined (TagList) } -> {"TagList" :: NullOrUndefined (TagList) } ) -> ListTagsResponse
-newListTagsResponse'  customize = (ListTagsResponse <<< customize) { "TagList": (NullOrUndefined Nothing) }
+newListTagsResponse' :: ( { "TagList" :: Maybe (TagList) } -> {"TagList" :: Maybe (TagList) } ) -> ListTagsResponse
+newListTagsResponse'  customize = (ListTagsResponse <<< customize) { "TagList": Nothing }
 
 
 
 -- | <p>Log Publishing option that is set for given domain. <br/>Attributes and their details: <ul> <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li> <li>Enabled: Whether the log publishing for given log type is enabled or not</li> </ul> </p>
 newtype LogPublishingOption = LogPublishingOption 
-  { "CloudWatchLogsLogGroupArn" :: NullOrUndefined (CloudWatchLogsLogGroupArn)
-  , "Enabled" :: NullOrUndefined (Boolean)
+  { "CloudWatchLogsLogGroupArn" :: Maybe (CloudWatchLogsLogGroupArn)
+  , "Enabled" :: Maybe (Boolean)
   }
 derive instance newtypeLogPublishingOption :: Newtype LogPublishingOption _
 derive instance repGenericLogPublishingOption :: Generic LogPublishingOption _
@@ -1116,12 +1115,12 @@ instance encodeLogPublishingOption :: Encode LogPublishingOption where encode = 
 
 -- | Constructs LogPublishingOption from required parameters
 newLogPublishingOption :: LogPublishingOption
-newLogPublishingOption  = LogPublishingOption { "CloudWatchLogsLogGroupArn": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing) }
+newLogPublishingOption  = LogPublishingOption { "CloudWatchLogsLogGroupArn": Nothing, "Enabled": Nothing }
 
 -- | Constructs LogPublishingOption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLogPublishingOption' :: ( { "CloudWatchLogsLogGroupArn" :: NullOrUndefined (CloudWatchLogsLogGroupArn) , "Enabled" :: NullOrUndefined (Boolean) } -> {"CloudWatchLogsLogGroupArn" :: NullOrUndefined (CloudWatchLogsLogGroupArn) , "Enabled" :: NullOrUndefined (Boolean) } ) -> LogPublishingOption
-newLogPublishingOption'  customize = (LogPublishingOption <<< customize) { "CloudWatchLogsLogGroupArn": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing) }
+newLogPublishingOption' :: ( { "CloudWatchLogsLogGroupArn" :: Maybe (CloudWatchLogsLogGroupArn) , "Enabled" :: Maybe (Boolean) } -> {"CloudWatchLogsLogGroupArn" :: Maybe (CloudWatchLogsLogGroupArn) , "Enabled" :: Maybe (Boolean) } ) -> LogPublishingOption
+newLogPublishingOption'  customize = (LogPublishingOption <<< customize) { "CloudWatchLogsLogGroupArn": Nothing, "Enabled": Nothing }
 
 
 
@@ -1136,8 +1135,8 @@ instance encodeLogPublishingOptions :: Encode LogPublishingOptions where encode 
 
 -- | <p>The configured log publishing options for the domain and their current status.</p>
 newtype LogPublishingOptionsStatus = LogPublishingOptionsStatus 
-  { "Options" :: NullOrUndefined (LogPublishingOptions)
-  , "Status" :: NullOrUndefined (OptionStatus)
+  { "Options" :: Maybe (LogPublishingOptions)
+  , "Status" :: Maybe (OptionStatus)
   }
 derive instance newtypeLogPublishingOptionsStatus :: Newtype LogPublishingOptionsStatus _
 derive instance repGenericLogPublishingOptionsStatus :: Generic LogPublishingOptionsStatus _
@@ -1147,12 +1146,12 @@ instance encodeLogPublishingOptionsStatus :: Encode LogPublishingOptionsStatus w
 
 -- | Constructs LogPublishingOptionsStatus from required parameters
 newLogPublishingOptionsStatus :: LogPublishingOptionsStatus
-newLogPublishingOptionsStatus  = LogPublishingOptionsStatus { "Options": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newLogPublishingOptionsStatus  = LogPublishingOptionsStatus { "Options": Nothing, "Status": Nothing }
 
 -- | Constructs LogPublishingOptionsStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLogPublishingOptionsStatus' :: ( { "Options" :: NullOrUndefined (LogPublishingOptions) , "Status" :: NullOrUndefined (OptionStatus) } -> {"Options" :: NullOrUndefined (LogPublishingOptions) , "Status" :: NullOrUndefined (OptionStatus) } ) -> LogPublishingOptionsStatus
-newLogPublishingOptionsStatus'  customize = (LogPublishingOptionsStatus <<< customize) { "Options": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newLogPublishingOptionsStatus' :: ( { "Options" :: Maybe (LogPublishingOptions) , "Status" :: Maybe (OptionStatus) } -> {"Options" :: Maybe (LogPublishingOptions) , "Status" :: Maybe (OptionStatus) } ) -> LogPublishingOptionsStatus
+newLogPublishingOptionsStatus'  customize = (LogPublishingOptionsStatus <<< customize) { "Options": Nothing, "Status": Nothing }
 
 
 
@@ -1220,9 +1219,9 @@ instance encodeOptionState :: Encode OptionState where encode = genericEncode op
 newtype OptionStatus = OptionStatus 
   { "CreationDate" :: (UpdateTimestamp)
   , "UpdateDate" :: (UpdateTimestamp)
-  , "UpdateVersion" :: NullOrUndefined (UIntValue)
+  , "UpdateVersion" :: Maybe (UIntValue)
   , "State" :: (OptionState)
-  , "PendingDeletion" :: NullOrUndefined (Boolean)
+  , "PendingDeletion" :: Maybe (Boolean)
   }
 derive instance newtypeOptionStatus :: Newtype OptionStatus _
 derive instance repGenericOptionStatus :: Generic OptionStatus _
@@ -1232,12 +1231,12 @@ instance encodeOptionStatus :: Encode OptionStatus where encode = genericEncode 
 
 -- | Constructs OptionStatus from required parameters
 newOptionStatus :: UpdateTimestamp -> OptionState -> UpdateTimestamp -> OptionStatus
-newOptionStatus _CreationDate _State _UpdateDate = OptionStatus { "CreationDate": _CreationDate, "State": _State, "UpdateDate": _UpdateDate, "PendingDeletion": (NullOrUndefined Nothing), "UpdateVersion": (NullOrUndefined Nothing) }
+newOptionStatus _CreationDate _State _UpdateDate = OptionStatus { "CreationDate": _CreationDate, "State": _State, "UpdateDate": _UpdateDate, "PendingDeletion": Nothing, "UpdateVersion": Nothing }
 
 -- | Constructs OptionStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOptionStatus' :: UpdateTimestamp -> OptionState -> UpdateTimestamp -> ( { "CreationDate" :: (UpdateTimestamp) , "UpdateDate" :: (UpdateTimestamp) , "UpdateVersion" :: NullOrUndefined (UIntValue) , "State" :: (OptionState) , "PendingDeletion" :: NullOrUndefined (Boolean) } -> {"CreationDate" :: (UpdateTimestamp) , "UpdateDate" :: (UpdateTimestamp) , "UpdateVersion" :: NullOrUndefined (UIntValue) , "State" :: (OptionState) , "PendingDeletion" :: NullOrUndefined (Boolean) } ) -> OptionStatus
-newOptionStatus' _CreationDate _State _UpdateDate customize = (OptionStatus <<< customize) { "CreationDate": _CreationDate, "State": _State, "UpdateDate": _UpdateDate, "PendingDeletion": (NullOrUndefined Nothing), "UpdateVersion": (NullOrUndefined Nothing) }
+newOptionStatus' :: UpdateTimestamp -> OptionState -> UpdateTimestamp -> ( { "CreationDate" :: (UpdateTimestamp) , "UpdateDate" :: (UpdateTimestamp) , "UpdateVersion" :: Maybe (UIntValue) , "State" :: (OptionState) , "PendingDeletion" :: Maybe (Boolean) } -> {"CreationDate" :: (UpdateTimestamp) , "UpdateDate" :: (UpdateTimestamp) , "UpdateVersion" :: Maybe (UIntValue) , "State" :: (OptionState) , "PendingDeletion" :: Maybe (Boolean) } ) -> OptionStatus
+newOptionStatus' _CreationDate _State _UpdateDate customize = (OptionStatus <<< customize) { "CreationDate": _CreationDate, "State": _State, "UpdateDate": _UpdateDate, "PendingDeletion": Nothing, "UpdateVersion": Nothing }
 
 
 
@@ -1305,7 +1304,7 @@ instance encodeServiceUrl :: Encode ServiceUrl where encode = genericEncode opti
 
 -- | <p>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.</p>
 newtype SnapshotOptions = SnapshotOptions 
-  { "AutomatedSnapshotStartHour" :: NullOrUndefined (IntegerClass)
+  { "AutomatedSnapshotStartHour" :: Maybe (IntegerClass)
   }
 derive instance newtypeSnapshotOptions :: Newtype SnapshotOptions _
 derive instance repGenericSnapshotOptions :: Generic SnapshotOptions _
@@ -1315,12 +1314,12 @@ instance encodeSnapshotOptions :: Encode SnapshotOptions where encode = genericE
 
 -- | Constructs SnapshotOptions from required parameters
 newSnapshotOptions :: SnapshotOptions
-newSnapshotOptions  = SnapshotOptions { "AutomatedSnapshotStartHour": (NullOrUndefined Nothing) }
+newSnapshotOptions  = SnapshotOptions { "AutomatedSnapshotStartHour": Nothing }
 
 -- | Constructs SnapshotOptions's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshotOptions' :: ( { "AutomatedSnapshotStartHour" :: NullOrUndefined (IntegerClass) } -> {"AutomatedSnapshotStartHour" :: NullOrUndefined (IntegerClass) } ) -> SnapshotOptions
-newSnapshotOptions'  customize = (SnapshotOptions <<< customize) { "AutomatedSnapshotStartHour": (NullOrUndefined Nothing) }
+newSnapshotOptions' :: ( { "AutomatedSnapshotStartHour" :: Maybe (IntegerClass) } -> {"AutomatedSnapshotStartHour" :: Maybe (IntegerClass) } ) -> SnapshotOptions
+newSnapshotOptions'  customize = (SnapshotOptions <<< customize) { "AutomatedSnapshotStartHour": Nothing }
 
 
 
@@ -1358,9 +1357,9 @@ instance encodeStorageSubTypeName :: Encode StorageSubTypeName where encode = ge
 
 -- | <p>StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType. </p>
 newtype StorageType = StorageType 
-  { "StorageTypeName" :: NullOrUndefined (StorageTypeName)
-  , "StorageSubTypeName" :: NullOrUndefined (StorageSubTypeName)
-  , "StorageTypeLimits" :: NullOrUndefined (StorageTypeLimitList)
+  { "StorageTypeName" :: Maybe (StorageTypeName)
+  , "StorageSubTypeName" :: Maybe (StorageSubTypeName)
+  , "StorageTypeLimits" :: Maybe (StorageTypeLimitList)
   }
 derive instance newtypeStorageType :: Newtype StorageType _
 derive instance repGenericStorageType :: Generic StorageType _
@@ -1370,19 +1369,19 @@ instance encodeStorageType :: Encode StorageType where encode = genericEncode op
 
 -- | Constructs StorageType from required parameters
 newStorageType :: StorageType
-newStorageType  = StorageType { "StorageSubTypeName": (NullOrUndefined Nothing), "StorageTypeLimits": (NullOrUndefined Nothing), "StorageTypeName": (NullOrUndefined Nothing) }
+newStorageType  = StorageType { "StorageSubTypeName": Nothing, "StorageTypeLimits": Nothing, "StorageTypeName": Nothing }
 
 -- | Constructs StorageType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageType' :: ( { "StorageTypeName" :: NullOrUndefined (StorageTypeName) , "StorageSubTypeName" :: NullOrUndefined (StorageSubTypeName) , "StorageTypeLimits" :: NullOrUndefined (StorageTypeLimitList) } -> {"StorageTypeName" :: NullOrUndefined (StorageTypeName) , "StorageSubTypeName" :: NullOrUndefined (StorageSubTypeName) , "StorageTypeLimits" :: NullOrUndefined (StorageTypeLimitList) } ) -> StorageType
-newStorageType'  customize = (StorageType <<< customize) { "StorageSubTypeName": (NullOrUndefined Nothing), "StorageTypeLimits": (NullOrUndefined Nothing), "StorageTypeName": (NullOrUndefined Nothing) }
+newStorageType' :: ( { "StorageTypeName" :: Maybe (StorageTypeName) , "StorageSubTypeName" :: Maybe (StorageSubTypeName) , "StorageTypeLimits" :: Maybe (StorageTypeLimitList) } -> {"StorageTypeName" :: Maybe (StorageTypeName) , "StorageSubTypeName" :: Maybe (StorageSubTypeName) , "StorageTypeLimits" :: Maybe (StorageTypeLimitList) } ) -> StorageType
+newStorageType'  customize = (StorageType <<< customize) { "StorageSubTypeName": Nothing, "StorageTypeLimits": Nothing, "StorageTypeName": Nothing }
 
 
 
 -- | <p>Limits that are applicable for given storage type. </p>
 newtype StorageTypeLimit = StorageTypeLimit 
-  { "LimitName" :: NullOrUndefined (LimitName)
-  , "LimitValues" :: NullOrUndefined (LimitValueList)
+  { "LimitName" :: Maybe (LimitName)
+  , "LimitValues" :: Maybe (LimitValueList)
   }
 derive instance newtypeStorageTypeLimit :: Newtype StorageTypeLimit _
 derive instance repGenericStorageTypeLimit :: Generic StorageTypeLimit _
@@ -1392,12 +1391,12 @@ instance encodeStorageTypeLimit :: Encode StorageTypeLimit where encode = generi
 
 -- | Constructs StorageTypeLimit from required parameters
 newStorageTypeLimit :: StorageTypeLimit
-newStorageTypeLimit  = StorageTypeLimit { "LimitName": (NullOrUndefined Nothing), "LimitValues": (NullOrUndefined Nothing) }
+newStorageTypeLimit  = StorageTypeLimit { "LimitName": Nothing, "LimitValues": Nothing }
 
 -- | Constructs StorageTypeLimit's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageTypeLimit' :: ( { "LimitName" :: NullOrUndefined (LimitName) , "LimitValues" :: NullOrUndefined (LimitValueList) } -> {"LimitName" :: NullOrUndefined (LimitName) , "LimitValues" :: NullOrUndefined (LimitValueList) } ) -> StorageTypeLimit
-newStorageTypeLimit'  customize = (StorageTypeLimit <<< customize) { "LimitName": (NullOrUndefined Nothing), "LimitValues": (NullOrUndefined Nothing) }
+newStorageTypeLimit' :: ( { "LimitName" :: Maybe (LimitName) , "LimitValues" :: Maybe (LimitValueList) } -> {"LimitName" :: Maybe (LimitName) , "LimitValues" :: Maybe (LimitValueList) } ) -> StorageTypeLimit
+newStorageTypeLimit'  customize = (StorageTypeLimit <<< customize) { "LimitName": Nothing, "LimitValues": Nothing }
 
 
 
@@ -1502,13 +1501,13 @@ instance encodeUIntValue :: Encode UIntValue where encode = genericEncode option
 -- | <p>Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.</p>
 newtype UpdateElasticsearchDomainConfigRequest = UpdateElasticsearchDomainConfigRequest 
   { "DomainName" :: (DomainName)
-  , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig)
-  , "EBSOptions" :: NullOrUndefined (EBSOptions)
-  , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions)
-  , "VPCOptions" :: NullOrUndefined (VPCOptions)
-  , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions)
-  , "AccessPolicies" :: NullOrUndefined (PolicyDocument)
-  , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions)
+  , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig)
+  , "EBSOptions" :: Maybe (EBSOptions)
+  , "SnapshotOptions" :: Maybe (SnapshotOptions)
+  , "VPCOptions" :: Maybe (VPCOptions)
+  , "AdvancedOptions" :: Maybe (AdvancedOptions)
+  , "AccessPolicies" :: Maybe (PolicyDocument)
+  , "LogPublishingOptions" :: Maybe (LogPublishingOptions)
   }
 derive instance newtypeUpdateElasticsearchDomainConfigRequest :: Newtype UpdateElasticsearchDomainConfigRequest _
 derive instance repGenericUpdateElasticsearchDomainConfigRequest :: Generic UpdateElasticsearchDomainConfigRequest _
@@ -1518,12 +1517,12 @@ instance encodeUpdateElasticsearchDomainConfigRequest :: Encode UpdateElasticsea
 
 -- | Constructs UpdateElasticsearchDomainConfigRequest from required parameters
 newUpdateElasticsearchDomainConfigRequest :: DomainName -> UpdateElasticsearchDomainConfigRequest
-newUpdateElasticsearchDomainConfigRequest _DomainName = UpdateElasticsearchDomainConfigRequest { "DomainName": _DomainName, "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchClusterConfig": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newUpdateElasticsearchDomainConfigRequest _DomainName = UpdateElasticsearchDomainConfigRequest { "DomainName": _DomainName, "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "EBSOptions": Nothing, "ElasticsearchClusterConfig": Nothing, "LogPublishingOptions": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 -- | Constructs UpdateElasticsearchDomainConfigRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateElasticsearchDomainConfigRequest' :: DomainName -> ( { "DomainName" :: (DomainName) , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig) , "EBSOptions" :: NullOrUndefined (EBSOptions) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions) , "VPCOptions" :: NullOrUndefined (VPCOptions) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions) , "AccessPolicies" :: NullOrUndefined (PolicyDocument) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } -> {"DomainName" :: (DomainName) , "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig) , "EBSOptions" :: NullOrUndefined (EBSOptions) , "SnapshotOptions" :: NullOrUndefined (SnapshotOptions) , "VPCOptions" :: NullOrUndefined (VPCOptions) , "AdvancedOptions" :: NullOrUndefined (AdvancedOptions) , "AccessPolicies" :: NullOrUndefined (PolicyDocument) , "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } ) -> UpdateElasticsearchDomainConfigRequest
-newUpdateElasticsearchDomainConfigRequest' _DomainName customize = (UpdateElasticsearchDomainConfigRequest <<< customize) { "DomainName": _DomainName, "AccessPolicies": (NullOrUndefined Nothing), "AdvancedOptions": (NullOrUndefined Nothing), "EBSOptions": (NullOrUndefined Nothing), "ElasticsearchClusterConfig": (NullOrUndefined Nothing), "LogPublishingOptions": (NullOrUndefined Nothing), "SnapshotOptions": (NullOrUndefined Nothing), "VPCOptions": (NullOrUndefined Nothing) }
+newUpdateElasticsearchDomainConfigRequest' :: DomainName -> ( { "DomainName" :: (DomainName) , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig) , "EBSOptions" :: Maybe (EBSOptions) , "SnapshotOptions" :: Maybe (SnapshotOptions) , "VPCOptions" :: Maybe (VPCOptions) , "AdvancedOptions" :: Maybe (AdvancedOptions) , "AccessPolicies" :: Maybe (PolicyDocument) , "LogPublishingOptions" :: Maybe (LogPublishingOptions) } -> {"DomainName" :: (DomainName) , "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig) , "EBSOptions" :: Maybe (EBSOptions) , "SnapshotOptions" :: Maybe (SnapshotOptions) , "VPCOptions" :: Maybe (VPCOptions) , "AdvancedOptions" :: Maybe (AdvancedOptions) , "AccessPolicies" :: Maybe (PolicyDocument) , "LogPublishingOptions" :: Maybe (LogPublishingOptions) } ) -> UpdateElasticsearchDomainConfigRequest
+newUpdateElasticsearchDomainConfigRequest' _DomainName customize = (UpdateElasticsearchDomainConfigRequest <<< customize) { "DomainName": _DomainName, "AccessPolicies": Nothing, "AdvancedOptions": Nothing, "EBSOptions": Nothing, "ElasticsearchClusterConfig": Nothing, "LogPublishingOptions": Nothing, "SnapshotOptions": Nothing, "VPCOptions": Nothing }
 
 
 
@@ -1559,10 +1558,10 @@ instance encodeUpdateTimestamp :: Encode UpdateTimestamp where encode = genericE
 
 -- | <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
 newtype VPCDerivedInfo = VPCDerivedInfo 
-  { "VPCId" :: NullOrUndefined (String)
-  , "SubnetIds" :: NullOrUndefined (StringList)
-  , "AvailabilityZones" :: NullOrUndefined (StringList)
-  , "SecurityGroupIds" :: NullOrUndefined (StringList)
+  { "VPCId" :: Maybe (String)
+  , "SubnetIds" :: Maybe (StringList)
+  , "AvailabilityZones" :: Maybe (StringList)
+  , "SecurityGroupIds" :: Maybe (StringList)
   }
 derive instance newtypeVPCDerivedInfo :: Newtype VPCDerivedInfo _
 derive instance repGenericVPCDerivedInfo :: Generic VPCDerivedInfo _
@@ -1572,12 +1571,12 @@ instance encodeVPCDerivedInfo :: Encode VPCDerivedInfo where encode = genericEnc
 
 -- | Constructs VPCDerivedInfo from required parameters
 newVPCDerivedInfo :: VPCDerivedInfo
-newVPCDerivedInfo  = VPCDerivedInfo { "AvailabilityZones": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VPCId": (NullOrUndefined Nothing) }
+newVPCDerivedInfo  = VPCDerivedInfo { "AvailabilityZones": Nothing, "SecurityGroupIds": Nothing, "SubnetIds": Nothing, "VPCId": Nothing }
 
 -- | Constructs VPCDerivedInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVPCDerivedInfo' :: ( { "VPCId" :: NullOrUndefined (String) , "SubnetIds" :: NullOrUndefined (StringList) , "AvailabilityZones" :: NullOrUndefined (StringList) , "SecurityGroupIds" :: NullOrUndefined (StringList) } -> {"VPCId" :: NullOrUndefined (String) , "SubnetIds" :: NullOrUndefined (StringList) , "AvailabilityZones" :: NullOrUndefined (StringList) , "SecurityGroupIds" :: NullOrUndefined (StringList) } ) -> VPCDerivedInfo
-newVPCDerivedInfo'  customize = (VPCDerivedInfo <<< customize) { "AvailabilityZones": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "VPCId": (NullOrUndefined Nothing) }
+newVPCDerivedInfo' :: ( { "VPCId" :: Maybe (String) , "SubnetIds" :: Maybe (StringList) , "AvailabilityZones" :: Maybe (StringList) , "SecurityGroupIds" :: Maybe (StringList) } -> {"VPCId" :: Maybe (String) , "SubnetIds" :: Maybe (StringList) , "AvailabilityZones" :: Maybe (StringList) , "SecurityGroupIds" :: Maybe (StringList) } ) -> VPCDerivedInfo
+newVPCDerivedInfo'  customize = (VPCDerivedInfo <<< customize) { "AvailabilityZones": Nothing, "SecurityGroupIds": Nothing, "SubnetIds": Nothing, "VPCId": Nothing }
 
 
 
@@ -1605,8 +1604,8 @@ newVPCDerivedInfoStatus' _Options _Status customize = (VPCDerivedInfoStatus <<< 
 
 -- | <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
 newtype VPCOptions = VPCOptions 
-  { "SubnetIds" :: NullOrUndefined (StringList)
-  , "SecurityGroupIds" :: NullOrUndefined (StringList)
+  { "SubnetIds" :: Maybe (StringList)
+  , "SecurityGroupIds" :: Maybe (StringList)
   }
 derive instance newtypeVPCOptions :: Newtype VPCOptions _
 derive instance repGenericVPCOptions :: Generic VPCOptions _
@@ -1616,12 +1615,12 @@ instance encodeVPCOptions :: Encode VPCOptions where encode = genericEncode opti
 
 -- | Constructs VPCOptions from required parameters
 newVPCOptions :: VPCOptions
-newVPCOptions  = VPCOptions { "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing) }
+newVPCOptions  = VPCOptions { "SecurityGroupIds": Nothing, "SubnetIds": Nothing }
 
 -- | Constructs VPCOptions's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVPCOptions' :: ( { "SubnetIds" :: NullOrUndefined (StringList) , "SecurityGroupIds" :: NullOrUndefined (StringList) } -> {"SubnetIds" :: NullOrUndefined (StringList) , "SecurityGroupIds" :: NullOrUndefined (StringList) } ) -> VPCOptions
-newVPCOptions'  customize = (VPCOptions <<< customize) { "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing) }
+newVPCOptions' :: ( { "SubnetIds" :: Maybe (StringList) , "SecurityGroupIds" :: Maybe (StringList) } -> {"SubnetIds" :: Maybe (StringList) , "SecurityGroupIds" :: Maybe (StringList) } ) -> VPCOptions
+newVPCOptions'  customize = (VPCOptions <<< customize) { "SecurityGroupIds": Nothing, "SubnetIds": Nothing }
 
 
 

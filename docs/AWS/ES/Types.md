@@ -96,7 +96,7 @@ Constructs AddTagsRequest's fields from required parameters
 
 ``` purescript
 newtype AdditionalLimit
-  = AdditionalLimit { "LimitName" :: NullOrUndefined (LimitName), "LimitValues" :: NullOrUndefined (LimitValueList) }
+  = AdditionalLimit { "LimitName" :: Maybe (LimitName), "LimitValues" :: Maybe (LimitValueList) }
 ```
 
 <p> List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> . </p>
@@ -121,7 +121,7 @@ Constructs AdditionalLimit from required parameters
 #### `newAdditionalLimit'`
 
 ``` purescript
-newAdditionalLimit' :: ({ "LimitName" :: NullOrUndefined (LimitName), "LimitValues" :: NullOrUndefined (LimitValueList) } -> { "LimitName" :: NullOrUndefined (LimitName), "LimitValues" :: NullOrUndefined (LimitValueList) }) -> AdditionalLimit
+newAdditionalLimit' :: ({ "LimitName" :: Maybe (LimitName), "LimitValues" :: Maybe (LimitValueList) } -> { "LimitName" :: Maybe (LimitName), "LimitValues" :: Maybe (LimitValueList) }) -> AdditionalLimit
 ```
 
 Constructs AdditionalLimit's fields from required parameters
@@ -198,7 +198,7 @@ Constructs AdvancedOptionsStatus's fields from required parameters
 
 ``` purescript
 newtype BaseException
-  = BaseException { message :: NullOrUndefined (ErrorMessage) }
+  = BaseException { message :: Maybe (ErrorMessage) }
 ```
 
 <p>An error occurred while processing the request.</p>
@@ -223,7 +223,7 @@ Constructs BaseException from required parameters
 #### `newBaseException'`
 
 ``` purescript
-newBaseException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> BaseException
+newBaseException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> BaseException
 ```
 
 Constructs BaseException's fields from required parameters
@@ -250,7 +250,7 @@ Encode CloudWatchLogsLogGroupArn
 
 ``` purescript
 newtype CreateElasticsearchDomainRequest
-  = CreateElasticsearchDomainRequest { "DomainName" :: DomainName, "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig), "EBSOptions" :: NullOrUndefined (EBSOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCOptions), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) }
+  = CreateElasticsearchDomainRequest { "DomainName" :: DomainName, "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig), "EBSOptions" :: Maybe (EBSOptions), "AccessPolicies" :: Maybe (PolicyDocument), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCOptions), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "LogPublishingOptions" :: Maybe (LogPublishingOptions) }
 ```
 
 ##### Instances
@@ -273,7 +273,7 @@ Constructs CreateElasticsearchDomainRequest from required parameters
 #### `newCreateElasticsearchDomainRequest'`
 
 ``` purescript
-newCreateElasticsearchDomainRequest' :: DomainName -> ({ "DomainName" :: DomainName, "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig), "EBSOptions" :: NullOrUndefined (EBSOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCOptions), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } -> { "DomainName" :: DomainName, "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig), "EBSOptions" :: NullOrUndefined (EBSOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCOptions), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) }) -> CreateElasticsearchDomainRequest
+newCreateElasticsearchDomainRequest' :: DomainName -> ({ "DomainName" :: DomainName, "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig), "EBSOptions" :: Maybe (EBSOptions), "AccessPolicies" :: Maybe (PolicyDocument), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCOptions), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "LogPublishingOptions" :: Maybe (LogPublishingOptions) } -> { "DomainName" :: DomainName, "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig), "EBSOptions" :: Maybe (EBSOptions), "AccessPolicies" :: Maybe (PolicyDocument), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCOptions), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "LogPublishingOptions" :: Maybe (LogPublishingOptions) }) -> CreateElasticsearchDomainRequest
 ```
 
 Constructs CreateElasticsearchDomainRequest's fields from required parameters
@@ -282,7 +282,7 @@ Constructs CreateElasticsearchDomainRequest's fields from required parameters
 
 ``` purescript
 newtype CreateElasticsearchDomainResponse
-  = CreateElasticsearchDomainResponse { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) }
+  = CreateElasticsearchDomainResponse { "DomainStatus" :: Maybe (ElasticsearchDomainStatus) }
 ```
 
 <p>The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.</p>
@@ -307,7 +307,7 @@ Constructs CreateElasticsearchDomainResponse from required parameters
 #### `newCreateElasticsearchDomainResponse'`
 
 ``` purescript
-newCreateElasticsearchDomainResponse' :: ({ "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) } -> { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) }) -> CreateElasticsearchDomainResponse
+newCreateElasticsearchDomainResponse' :: ({ "DomainStatus" :: Maybe (ElasticsearchDomainStatus) } -> { "DomainStatus" :: Maybe (ElasticsearchDomainStatus) }) -> CreateElasticsearchDomainResponse
 ```
 
 Constructs CreateElasticsearchDomainResponse's fields from required parameters
@@ -350,7 +350,7 @@ Constructs DeleteElasticsearchDomainRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteElasticsearchDomainResponse
-  = DeleteElasticsearchDomainResponse { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) }
+  = DeleteElasticsearchDomainResponse { "DomainStatus" :: Maybe (ElasticsearchDomainStatus) }
 ```
 
 <p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.</p>
@@ -375,7 +375,7 @@ Constructs DeleteElasticsearchDomainResponse from required parameters
 #### `newDeleteElasticsearchDomainResponse'`
 
 ``` purescript
-newDeleteElasticsearchDomainResponse' :: ({ "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) } -> { "DomainStatus" :: NullOrUndefined (ElasticsearchDomainStatus) }) -> DeleteElasticsearchDomainResponse
+newDeleteElasticsearchDomainResponse' :: ({ "DomainStatus" :: Maybe (ElasticsearchDomainStatus) } -> { "DomainStatus" :: Maybe (ElasticsearchDomainStatus) }) -> DeleteElasticsearchDomainResponse
 ```
 
 Constructs DeleteElasticsearchDomainResponse's fields from required parameters
@@ -588,7 +588,7 @@ Constructs DescribeElasticsearchDomainsResponse's fields from required parameter
 
 ``` purescript
 newtype DescribeElasticsearchInstanceTypeLimitsRequest
-  = DescribeElasticsearchInstanceTypeLimitsRequest { "DomainName" :: NullOrUndefined (DomainName), "InstanceType" :: ESPartitionInstanceType, "ElasticsearchVersion" :: ElasticsearchVersionString }
+  = DescribeElasticsearchInstanceTypeLimitsRequest { "DomainName" :: Maybe (DomainName), "InstanceType" :: ESPartitionInstanceType, "ElasticsearchVersion" :: ElasticsearchVersionString }
 ```
 
 <p> Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. </p>
@@ -613,7 +613,7 @@ Constructs DescribeElasticsearchInstanceTypeLimitsRequest from required paramete
 #### `newDescribeElasticsearchInstanceTypeLimitsRequest'`
 
 ``` purescript
-newDescribeElasticsearchInstanceTypeLimitsRequest' :: ElasticsearchVersionString -> ESPartitionInstanceType -> ({ "DomainName" :: NullOrUndefined (DomainName), "InstanceType" :: ESPartitionInstanceType, "ElasticsearchVersion" :: ElasticsearchVersionString } -> { "DomainName" :: NullOrUndefined (DomainName), "InstanceType" :: ESPartitionInstanceType, "ElasticsearchVersion" :: ElasticsearchVersionString }) -> DescribeElasticsearchInstanceTypeLimitsRequest
+newDescribeElasticsearchInstanceTypeLimitsRequest' :: ElasticsearchVersionString -> ESPartitionInstanceType -> ({ "DomainName" :: Maybe (DomainName), "InstanceType" :: ESPartitionInstanceType, "ElasticsearchVersion" :: ElasticsearchVersionString } -> { "DomainName" :: Maybe (DomainName), "InstanceType" :: ESPartitionInstanceType, "ElasticsearchVersion" :: ElasticsearchVersionString }) -> DescribeElasticsearchInstanceTypeLimitsRequest
 ```
 
 Constructs DescribeElasticsearchInstanceTypeLimitsRequest's fields from required parameters
@@ -622,7 +622,7 @@ Constructs DescribeElasticsearchInstanceTypeLimitsRequest's fields from required
 
 ``` purescript
 newtype DescribeElasticsearchInstanceTypeLimitsResponse
-  = DescribeElasticsearchInstanceTypeLimitsResponse { "LimitsByRole" :: NullOrUndefined (LimitsByRole) }
+  = DescribeElasticsearchInstanceTypeLimitsResponse { "LimitsByRole" :: Maybe (LimitsByRole) }
 ```
 
 <p> Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. </p>
@@ -647,7 +647,7 @@ Constructs DescribeElasticsearchInstanceTypeLimitsResponse from required paramet
 #### `newDescribeElasticsearchInstanceTypeLimitsResponse'`
 
 ``` purescript
-newDescribeElasticsearchInstanceTypeLimitsResponse' :: ({ "LimitsByRole" :: NullOrUndefined (LimitsByRole) } -> { "LimitsByRole" :: NullOrUndefined (LimitsByRole) }) -> DescribeElasticsearchInstanceTypeLimitsResponse
+newDescribeElasticsearchInstanceTypeLimitsResponse' :: ({ "LimitsByRole" :: Maybe (LimitsByRole) } -> { "LimitsByRole" :: Maybe (LimitsByRole) }) -> DescribeElasticsearchInstanceTypeLimitsResponse
 ```
 
 Constructs DescribeElasticsearchInstanceTypeLimitsResponse's fields from required parameters
@@ -692,7 +692,7 @@ Encode DomainId
 
 ``` purescript
 newtype DomainInfo
-  = DomainInfo { "DomainName" :: NullOrUndefined (DomainName) }
+  = DomainInfo { "DomainName" :: Maybe (DomainName) }
 ```
 
 ##### Instances
@@ -715,7 +715,7 @@ Constructs DomainInfo from required parameters
 #### `newDomainInfo'`
 
 ``` purescript
-newDomainInfo' :: ({ "DomainName" :: NullOrUndefined (DomainName) } -> { "DomainName" :: NullOrUndefined (DomainName) }) -> DomainInfo
+newDomainInfo' :: ({ "DomainName" :: Maybe (DomainName) } -> { "DomainName" :: Maybe (DomainName) }) -> DomainInfo
 ```
 
 Constructs DomainInfo's fields from required parameters
@@ -778,7 +778,7 @@ Encode DomainNameList
 
 ``` purescript
 newtype EBSOptions
-  = EBSOptions { "EBSEnabled" :: NullOrUndefined (Boolean), "VolumeType" :: NullOrUndefined (VolumeType), "VolumeSize" :: NullOrUndefined (IntegerClass), "Iops" :: NullOrUndefined (IntegerClass) }
+  = EBSOptions { "EBSEnabled" :: Maybe (Boolean), "VolumeType" :: Maybe (VolumeType), "VolumeSize" :: Maybe (IntegerClass), "Iops" :: Maybe (IntegerClass) }
 ```
 
 <p>Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.</p>
@@ -803,7 +803,7 @@ Constructs EBSOptions from required parameters
 #### `newEBSOptions'`
 
 ``` purescript
-newEBSOptions' :: ({ "EBSEnabled" :: NullOrUndefined (Boolean), "VolumeType" :: NullOrUndefined (VolumeType), "VolumeSize" :: NullOrUndefined (IntegerClass), "Iops" :: NullOrUndefined (IntegerClass) } -> { "EBSEnabled" :: NullOrUndefined (Boolean), "VolumeType" :: NullOrUndefined (VolumeType), "VolumeSize" :: NullOrUndefined (IntegerClass), "Iops" :: NullOrUndefined (IntegerClass) }) -> EBSOptions
+newEBSOptions' :: ({ "EBSEnabled" :: Maybe (Boolean), "VolumeType" :: Maybe (VolumeType), "VolumeSize" :: Maybe (IntegerClass), "Iops" :: Maybe (IntegerClass) } -> { "EBSEnabled" :: Maybe (Boolean), "VolumeType" :: Maybe (VolumeType), "VolumeSize" :: Maybe (IntegerClass), "Iops" :: Maybe (IntegerClass) }) -> EBSOptions
 ```
 
 Constructs EBSOptions's fields from required parameters
@@ -862,7 +862,7 @@ Encode ESPartitionInstanceType
 
 ``` purescript
 newtype ElasticsearchClusterConfig
-  = ElasticsearchClusterConfig { "InstanceType" :: NullOrUndefined (ESPartitionInstanceType), "InstanceCount" :: NullOrUndefined (IntegerClass), "DedicatedMasterEnabled" :: NullOrUndefined (Boolean), "ZoneAwarenessEnabled" :: NullOrUndefined (Boolean), "DedicatedMasterType" :: NullOrUndefined (ESPartitionInstanceType), "DedicatedMasterCount" :: NullOrUndefined (IntegerClass) }
+  = ElasticsearchClusterConfig { "InstanceType" :: Maybe (ESPartitionInstanceType), "InstanceCount" :: Maybe (IntegerClass), "DedicatedMasterEnabled" :: Maybe (Boolean), "ZoneAwarenessEnabled" :: Maybe (Boolean), "DedicatedMasterType" :: Maybe (ESPartitionInstanceType), "DedicatedMasterCount" :: Maybe (IntegerClass) }
 ```
 
 <p>Specifies the configuration for the domain cluster, such as the type and number of instances.</p>
@@ -887,7 +887,7 @@ Constructs ElasticsearchClusterConfig from required parameters
 #### `newElasticsearchClusterConfig'`
 
 ``` purescript
-newElasticsearchClusterConfig' :: ({ "InstanceType" :: NullOrUndefined (ESPartitionInstanceType), "InstanceCount" :: NullOrUndefined (IntegerClass), "DedicatedMasterEnabled" :: NullOrUndefined (Boolean), "ZoneAwarenessEnabled" :: NullOrUndefined (Boolean), "DedicatedMasterType" :: NullOrUndefined (ESPartitionInstanceType), "DedicatedMasterCount" :: NullOrUndefined (IntegerClass) } -> { "InstanceType" :: NullOrUndefined (ESPartitionInstanceType), "InstanceCount" :: NullOrUndefined (IntegerClass), "DedicatedMasterEnabled" :: NullOrUndefined (Boolean), "ZoneAwarenessEnabled" :: NullOrUndefined (Boolean), "DedicatedMasterType" :: NullOrUndefined (ESPartitionInstanceType), "DedicatedMasterCount" :: NullOrUndefined (IntegerClass) }) -> ElasticsearchClusterConfig
+newElasticsearchClusterConfig' :: ({ "InstanceType" :: Maybe (ESPartitionInstanceType), "InstanceCount" :: Maybe (IntegerClass), "DedicatedMasterEnabled" :: Maybe (Boolean), "ZoneAwarenessEnabled" :: Maybe (Boolean), "DedicatedMasterType" :: Maybe (ESPartitionInstanceType), "DedicatedMasterCount" :: Maybe (IntegerClass) } -> { "InstanceType" :: Maybe (ESPartitionInstanceType), "InstanceCount" :: Maybe (IntegerClass), "DedicatedMasterEnabled" :: Maybe (Boolean), "ZoneAwarenessEnabled" :: Maybe (Boolean), "DedicatedMasterType" :: Maybe (ESPartitionInstanceType), "DedicatedMasterCount" :: Maybe (IntegerClass) }) -> ElasticsearchClusterConfig
 ```
 
 Constructs ElasticsearchClusterConfig's fields from required parameters
@@ -930,7 +930,7 @@ Constructs ElasticsearchClusterConfigStatus's fields from required parameters
 
 ``` purescript
 newtype ElasticsearchDomainConfig
-  = ElasticsearchDomainConfig { "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionStatus), "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfigStatus), "EBSOptions" :: NullOrUndefined (EBSOptionsStatus), "AccessPolicies" :: NullOrUndefined (AccessPoliciesStatus), "SnapshotOptions" :: NullOrUndefined (SnapshotOptionsStatus), "VPCOptions" :: NullOrUndefined (VPCDerivedInfoStatus), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptionsStatus), "AdvancedOptions" :: NullOrUndefined (AdvancedOptionsStatus), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptionsStatus) }
+  = ElasticsearchDomainConfig { "ElasticsearchVersion" :: Maybe (ElasticsearchVersionStatus), "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfigStatus), "EBSOptions" :: Maybe (EBSOptionsStatus), "AccessPolicies" :: Maybe (AccessPoliciesStatus), "SnapshotOptions" :: Maybe (SnapshotOptionsStatus), "VPCOptions" :: Maybe (VPCDerivedInfoStatus), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptionsStatus), "AdvancedOptions" :: Maybe (AdvancedOptionsStatus), "LogPublishingOptions" :: Maybe (LogPublishingOptionsStatus) }
 ```
 
 <p>The configuration of an Elasticsearch domain.</p>
@@ -955,7 +955,7 @@ Constructs ElasticsearchDomainConfig from required parameters
 #### `newElasticsearchDomainConfig'`
 
 ``` purescript
-newElasticsearchDomainConfig' :: ({ "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionStatus), "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfigStatus), "EBSOptions" :: NullOrUndefined (EBSOptionsStatus), "AccessPolicies" :: NullOrUndefined (AccessPoliciesStatus), "SnapshotOptions" :: NullOrUndefined (SnapshotOptionsStatus), "VPCOptions" :: NullOrUndefined (VPCDerivedInfoStatus), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptionsStatus), "AdvancedOptions" :: NullOrUndefined (AdvancedOptionsStatus), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptionsStatus) } -> { "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionStatus), "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfigStatus), "EBSOptions" :: NullOrUndefined (EBSOptionsStatus), "AccessPolicies" :: NullOrUndefined (AccessPoliciesStatus), "SnapshotOptions" :: NullOrUndefined (SnapshotOptionsStatus), "VPCOptions" :: NullOrUndefined (VPCDerivedInfoStatus), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptionsStatus), "AdvancedOptions" :: NullOrUndefined (AdvancedOptionsStatus), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptionsStatus) }) -> ElasticsearchDomainConfig
+newElasticsearchDomainConfig' :: ({ "ElasticsearchVersion" :: Maybe (ElasticsearchVersionStatus), "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfigStatus), "EBSOptions" :: Maybe (EBSOptionsStatus), "AccessPolicies" :: Maybe (AccessPoliciesStatus), "SnapshotOptions" :: Maybe (SnapshotOptionsStatus), "VPCOptions" :: Maybe (VPCDerivedInfoStatus), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptionsStatus), "AdvancedOptions" :: Maybe (AdvancedOptionsStatus), "LogPublishingOptions" :: Maybe (LogPublishingOptionsStatus) } -> { "ElasticsearchVersion" :: Maybe (ElasticsearchVersionStatus), "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfigStatus), "EBSOptions" :: Maybe (EBSOptionsStatus), "AccessPolicies" :: Maybe (AccessPoliciesStatus), "SnapshotOptions" :: Maybe (SnapshotOptionsStatus), "VPCOptions" :: Maybe (VPCDerivedInfoStatus), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptionsStatus), "AdvancedOptions" :: Maybe (AdvancedOptionsStatus), "LogPublishingOptions" :: Maybe (LogPublishingOptionsStatus) }) -> ElasticsearchDomainConfig
 ```
 
 Constructs ElasticsearchDomainConfig's fields from required parameters
@@ -964,7 +964,7 @@ Constructs ElasticsearchDomainConfig's fields from required parameters
 
 ``` purescript
 newtype ElasticsearchDomainStatus
-  = ElasticsearchDomainStatus { "DomainId" :: DomainId, "DomainName" :: DomainName, "ARN" :: ARN, "Created" :: NullOrUndefined (Boolean), "Deleted" :: NullOrUndefined (Boolean), "Endpoint" :: NullOrUndefined (ServiceUrl), "Endpoints" :: NullOrUndefined (EndpointsMap), "Processing" :: NullOrUndefined (Boolean), "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: ElasticsearchClusterConfig, "EBSOptions" :: NullOrUndefined (EBSOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCDerivedInfo), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) }
+  = ElasticsearchDomainStatus { "DomainId" :: DomainId, "DomainName" :: DomainName, "ARN" :: ARN, "Created" :: Maybe (Boolean), "Deleted" :: Maybe (Boolean), "Endpoint" :: Maybe (ServiceUrl), "Endpoints" :: Maybe (EndpointsMap), "Processing" :: Maybe (Boolean), "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: ElasticsearchClusterConfig, "EBSOptions" :: Maybe (EBSOptions), "AccessPolicies" :: Maybe (PolicyDocument), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCDerivedInfo), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "LogPublishingOptions" :: Maybe (LogPublishingOptions) }
 ```
 
 <p>The current status of an Elasticsearch domain.</p>
@@ -989,7 +989,7 @@ Constructs ElasticsearchDomainStatus from required parameters
 #### `newElasticsearchDomainStatus'`
 
 ``` purescript
-newElasticsearchDomainStatus' :: ARN -> DomainId -> DomainName -> ElasticsearchClusterConfig -> ({ "DomainId" :: DomainId, "DomainName" :: DomainName, "ARN" :: ARN, "Created" :: NullOrUndefined (Boolean), "Deleted" :: NullOrUndefined (Boolean), "Endpoint" :: NullOrUndefined (ServiceUrl), "Endpoints" :: NullOrUndefined (EndpointsMap), "Processing" :: NullOrUndefined (Boolean), "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: ElasticsearchClusterConfig, "EBSOptions" :: NullOrUndefined (EBSOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCDerivedInfo), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } -> { "DomainId" :: DomainId, "DomainName" :: DomainName, "ARN" :: ARN, "Created" :: NullOrUndefined (Boolean), "Deleted" :: NullOrUndefined (Boolean), "Endpoint" :: NullOrUndefined (ServiceUrl), "Endpoints" :: NullOrUndefined (EndpointsMap), "Processing" :: NullOrUndefined (Boolean), "ElasticsearchVersion" :: NullOrUndefined (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: ElasticsearchClusterConfig, "EBSOptions" :: NullOrUndefined (EBSOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCDerivedInfo), "EncryptionAtRestOptions" :: NullOrUndefined (EncryptionAtRestOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) }) -> ElasticsearchDomainStatus
+newElasticsearchDomainStatus' :: ARN -> DomainId -> DomainName -> ElasticsearchClusterConfig -> ({ "DomainId" :: DomainId, "DomainName" :: DomainName, "ARN" :: ARN, "Created" :: Maybe (Boolean), "Deleted" :: Maybe (Boolean), "Endpoint" :: Maybe (ServiceUrl), "Endpoints" :: Maybe (EndpointsMap), "Processing" :: Maybe (Boolean), "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: ElasticsearchClusterConfig, "EBSOptions" :: Maybe (EBSOptions), "AccessPolicies" :: Maybe (PolicyDocument), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCDerivedInfo), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "LogPublishingOptions" :: Maybe (LogPublishingOptions) } -> { "DomainId" :: DomainId, "DomainName" :: DomainName, "ARN" :: ARN, "Created" :: Maybe (Boolean), "Deleted" :: Maybe (Boolean), "Endpoint" :: Maybe (ServiceUrl), "Endpoints" :: Maybe (EndpointsMap), "Processing" :: Maybe (Boolean), "ElasticsearchVersion" :: Maybe (ElasticsearchVersionString), "ElasticsearchClusterConfig" :: ElasticsearchClusterConfig, "EBSOptions" :: Maybe (EBSOptions), "AccessPolicies" :: Maybe (PolicyDocument), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCDerivedInfo), "EncryptionAtRestOptions" :: Maybe (EncryptionAtRestOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "LogPublishingOptions" :: Maybe (LogPublishingOptions) }) -> ElasticsearchDomainStatus
 ```
 
 Constructs ElasticsearchDomainStatus's fields from required parameters
@@ -1102,7 +1102,7 @@ Encode ElasticsearchVersionString
 
 ``` purescript
 newtype EncryptionAtRestOptions
-  = EncryptionAtRestOptions { "Enabled" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (KmsKeyId) }
+  = EncryptionAtRestOptions { "Enabled" :: Maybe (Boolean), "KmsKeyId" :: Maybe (KmsKeyId) }
 ```
 
 <p>Specifies the Encryption At Rest Options.</p>
@@ -1127,7 +1127,7 @@ Constructs EncryptionAtRestOptions from required parameters
 #### `newEncryptionAtRestOptions'`
 
 ``` purescript
-newEncryptionAtRestOptions' :: ({ "Enabled" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (KmsKeyId) } -> { "Enabled" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (KmsKeyId) }) -> EncryptionAtRestOptions
+newEncryptionAtRestOptions' :: ({ "Enabled" :: Maybe (Boolean), "KmsKeyId" :: Maybe (KmsKeyId) } -> { "Enabled" :: Maybe (Boolean), "KmsKeyId" :: Maybe (KmsKeyId) }) -> EncryptionAtRestOptions
 ```
 
 Constructs EncryptionAtRestOptions's fields from required parameters
@@ -1202,7 +1202,7 @@ Encode ErrorMessage
 
 ``` purescript
 newtype InstanceCountLimits
-  = InstanceCountLimits { "MinimumInstanceCount" :: NullOrUndefined (MinimumInstanceCount), "MaximumInstanceCount" :: NullOrUndefined (MaximumInstanceCount) }
+  = InstanceCountLimits { "MinimumInstanceCount" :: Maybe (MinimumInstanceCount), "MaximumInstanceCount" :: Maybe (MaximumInstanceCount) }
 ```
 
 <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
@@ -1227,7 +1227,7 @@ Constructs InstanceCountLimits from required parameters
 #### `newInstanceCountLimits'`
 
 ``` purescript
-newInstanceCountLimits' :: ({ "MinimumInstanceCount" :: NullOrUndefined (MinimumInstanceCount), "MaximumInstanceCount" :: NullOrUndefined (MaximumInstanceCount) } -> { "MinimumInstanceCount" :: NullOrUndefined (MinimumInstanceCount), "MaximumInstanceCount" :: NullOrUndefined (MaximumInstanceCount) }) -> InstanceCountLimits
+newInstanceCountLimits' :: ({ "MinimumInstanceCount" :: Maybe (MinimumInstanceCount), "MaximumInstanceCount" :: Maybe (MaximumInstanceCount) } -> { "MinimumInstanceCount" :: Maybe (MinimumInstanceCount), "MaximumInstanceCount" :: Maybe (MaximumInstanceCount) }) -> InstanceCountLimits
 ```
 
 Constructs InstanceCountLimits's fields from required parameters
@@ -1236,7 +1236,7 @@ Constructs InstanceCountLimits's fields from required parameters
 
 ``` purescript
 newtype InstanceLimits
-  = InstanceLimits { "InstanceCountLimits" :: NullOrUndefined (InstanceCountLimits) }
+  = InstanceLimits { "InstanceCountLimits" :: Maybe (InstanceCountLimits) }
 ```
 
 <p>InstanceLimits represents the list of instance related attributes that are available for given InstanceType. </p>
@@ -1261,7 +1261,7 @@ Constructs InstanceLimits from required parameters
 #### `newInstanceLimits'`
 
 ``` purescript
-newInstanceLimits' :: ({ "InstanceCountLimits" :: NullOrUndefined (InstanceCountLimits) } -> { "InstanceCountLimits" :: NullOrUndefined (InstanceCountLimits) }) -> InstanceLimits
+newInstanceLimits' :: ({ "InstanceCountLimits" :: Maybe (InstanceCountLimits) } -> { "InstanceCountLimits" :: Maybe (InstanceCountLimits) }) -> InstanceLimits
 ```
 
 Constructs InstanceLimits's fields from required parameters
@@ -1420,7 +1420,7 @@ Encode LimitValueList
 
 ``` purescript
 newtype Limits
-  = Limits { "StorageTypes" :: NullOrUndefined (StorageTypeList), "InstanceLimits" :: NullOrUndefined (InstanceLimits), "AdditionalLimits" :: NullOrUndefined (AdditionalLimitList) }
+  = Limits { "StorageTypes" :: Maybe (StorageTypeList), "InstanceLimits" :: Maybe (InstanceLimits), "AdditionalLimits" :: Maybe (AdditionalLimitList) }
 ```
 
 <p> Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code> </p>
@@ -1445,7 +1445,7 @@ Constructs Limits from required parameters
 #### `newLimits'`
 
 ``` purescript
-newLimits' :: ({ "StorageTypes" :: NullOrUndefined (StorageTypeList), "InstanceLimits" :: NullOrUndefined (InstanceLimits), "AdditionalLimits" :: NullOrUndefined (AdditionalLimitList) } -> { "StorageTypes" :: NullOrUndefined (StorageTypeList), "InstanceLimits" :: NullOrUndefined (InstanceLimits), "AdditionalLimits" :: NullOrUndefined (AdditionalLimitList) }) -> Limits
+newLimits' :: ({ "StorageTypes" :: Maybe (StorageTypeList), "InstanceLimits" :: Maybe (InstanceLimits), "AdditionalLimits" :: Maybe (AdditionalLimitList) } -> { "StorageTypes" :: Maybe (StorageTypeList), "InstanceLimits" :: Maybe (InstanceLimits), "AdditionalLimits" :: Maybe (AdditionalLimitList) }) -> Limits
 ```
 
 Constructs Limits's fields from required parameters
@@ -1472,7 +1472,7 @@ Encode LimitsByRole
 
 ``` purescript
 newtype ListDomainNamesResponse
-  = ListDomainNamesResponse { "DomainNames" :: NullOrUndefined (DomainInfoList) }
+  = ListDomainNamesResponse { "DomainNames" :: Maybe (DomainInfoList) }
 ```
 
 <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account.</p>
@@ -1497,7 +1497,7 @@ Constructs ListDomainNamesResponse from required parameters
 #### `newListDomainNamesResponse'`
 
 ``` purescript
-newListDomainNamesResponse' :: ({ "DomainNames" :: NullOrUndefined (DomainInfoList) } -> { "DomainNames" :: NullOrUndefined (DomainInfoList) }) -> ListDomainNamesResponse
+newListDomainNamesResponse' :: ({ "DomainNames" :: Maybe (DomainInfoList) } -> { "DomainNames" :: Maybe (DomainInfoList) }) -> ListDomainNamesResponse
 ```
 
 Constructs ListDomainNamesResponse's fields from required parameters
@@ -1506,7 +1506,7 @@ Constructs ListDomainNamesResponse's fields from required parameters
 
 ``` purescript
 newtype ListElasticsearchInstanceTypesRequest
-  = ListElasticsearchInstanceTypesRequest { "ElasticsearchVersion" :: ElasticsearchVersionString, "DomainName" :: NullOrUndefined (DomainName), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListElasticsearchInstanceTypesRequest { "ElasticsearchVersion" :: ElasticsearchVersionString, "DomainName" :: Maybe (DomainName), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p> Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. </p>
@@ -1531,7 +1531,7 @@ Constructs ListElasticsearchInstanceTypesRequest from required parameters
 #### `newListElasticsearchInstanceTypesRequest'`
 
 ``` purescript
-newListElasticsearchInstanceTypesRequest' :: ElasticsearchVersionString -> ({ "ElasticsearchVersion" :: ElasticsearchVersionString, "DomainName" :: NullOrUndefined (DomainName), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "ElasticsearchVersion" :: ElasticsearchVersionString, "DomainName" :: NullOrUndefined (DomainName), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> ListElasticsearchInstanceTypesRequest
+newListElasticsearchInstanceTypesRequest' :: ElasticsearchVersionString -> ({ "ElasticsearchVersion" :: ElasticsearchVersionString, "DomainName" :: Maybe (DomainName), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "ElasticsearchVersion" :: ElasticsearchVersionString, "DomainName" :: Maybe (DomainName), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> ListElasticsearchInstanceTypesRequest
 ```
 
 Constructs ListElasticsearchInstanceTypesRequest's fields from required parameters
@@ -1540,7 +1540,7 @@ Constructs ListElasticsearchInstanceTypesRequest's fields from required paramete
 
 ``` purescript
 newtype ListElasticsearchInstanceTypesResponse
-  = ListElasticsearchInstanceTypesResponse { "ElasticsearchInstanceTypes" :: NullOrUndefined (ElasticsearchInstanceTypeList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListElasticsearchInstanceTypesResponse { "ElasticsearchInstanceTypes" :: Maybe (ElasticsearchInstanceTypeList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p> Container for the parameters returned by <code> <a>ListElasticsearchInstanceTypes</a> </code> operation. </p>
@@ -1565,7 +1565,7 @@ Constructs ListElasticsearchInstanceTypesResponse from required parameters
 #### `newListElasticsearchInstanceTypesResponse'`
 
 ``` purescript
-newListElasticsearchInstanceTypesResponse' :: ({ "ElasticsearchInstanceTypes" :: NullOrUndefined (ElasticsearchInstanceTypeList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ElasticsearchInstanceTypes" :: NullOrUndefined (ElasticsearchInstanceTypeList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListElasticsearchInstanceTypesResponse
+newListElasticsearchInstanceTypesResponse' :: ({ "ElasticsearchInstanceTypes" :: Maybe (ElasticsearchInstanceTypeList), "NextToken" :: Maybe (NextToken) } -> { "ElasticsearchInstanceTypes" :: Maybe (ElasticsearchInstanceTypeList), "NextToken" :: Maybe (NextToken) }) -> ListElasticsearchInstanceTypesResponse
 ```
 
 Constructs ListElasticsearchInstanceTypesResponse's fields from required parameters
@@ -1574,7 +1574,7 @@ Constructs ListElasticsearchInstanceTypesResponse's fields from required paramet
 
 ``` purescript
 newtype ListElasticsearchVersionsRequest
-  = ListElasticsearchVersionsRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListElasticsearchVersionsRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p> Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call. </p> <p> Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p> </p>
@@ -1599,7 +1599,7 @@ Constructs ListElasticsearchVersionsRequest from required parameters
 #### `newListElasticsearchVersionsRequest'`
 
 ``` purescript
-newListElasticsearchVersionsRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> ListElasticsearchVersionsRequest
+newListElasticsearchVersionsRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> ListElasticsearchVersionsRequest
 ```
 
 Constructs ListElasticsearchVersionsRequest's fields from required parameters
@@ -1608,7 +1608,7 @@ Constructs ListElasticsearchVersionsRequest's fields from required parameters
 
 ``` purescript
 newtype ListElasticsearchVersionsResponse
-  = ListElasticsearchVersionsResponse { "ElasticsearchVersions" :: NullOrUndefined (ElasticsearchVersionList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListElasticsearchVersionsResponse { "ElasticsearchVersions" :: Maybe (ElasticsearchVersionList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p> Container for the parameters for response received from <code> <a>ListElasticsearchVersions</a> </code> operation. </p>
@@ -1633,7 +1633,7 @@ Constructs ListElasticsearchVersionsResponse from required parameters
 #### `newListElasticsearchVersionsResponse'`
 
 ``` purescript
-newListElasticsearchVersionsResponse' :: ({ "ElasticsearchVersions" :: NullOrUndefined (ElasticsearchVersionList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ElasticsearchVersions" :: NullOrUndefined (ElasticsearchVersionList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListElasticsearchVersionsResponse
+newListElasticsearchVersionsResponse' :: ({ "ElasticsearchVersions" :: Maybe (ElasticsearchVersionList), "NextToken" :: Maybe (NextToken) } -> { "ElasticsearchVersions" :: Maybe (ElasticsearchVersionList), "NextToken" :: Maybe (NextToken) }) -> ListElasticsearchVersionsResponse
 ```
 
 Constructs ListElasticsearchVersionsResponse's fields from required parameters
@@ -1676,7 +1676,7 @@ Constructs ListTagsRequest's fields from required parameters
 
 ``` purescript
 newtype ListTagsResponse
-  = ListTagsResponse { "TagList" :: NullOrUndefined (TagList) }
+  = ListTagsResponse { "TagList" :: Maybe (TagList) }
 ```
 
 <p>The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.</p>
@@ -1701,7 +1701,7 @@ Constructs ListTagsResponse from required parameters
 #### `newListTagsResponse'`
 
 ``` purescript
-newListTagsResponse' :: ({ "TagList" :: NullOrUndefined (TagList) } -> { "TagList" :: NullOrUndefined (TagList) }) -> ListTagsResponse
+newListTagsResponse' :: ({ "TagList" :: Maybe (TagList) } -> { "TagList" :: Maybe (TagList) }) -> ListTagsResponse
 ```
 
 Constructs ListTagsResponse's fields from required parameters
@@ -1710,7 +1710,7 @@ Constructs ListTagsResponse's fields from required parameters
 
 ``` purescript
 newtype LogPublishingOption
-  = LogPublishingOption { "CloudWatchLogsLogGroupArn" :: NullOrUndefined (CloudWatchLogsLogGroupArn), "Enabled" :: NullOrUndefined (Boolean) }
+  = LogPublishingOption { "CloudWatchLogsLogGroupArn" :: Maybe (CloudWatchLogsLogGroupArn), "Enabled" :: Maybe (Boolean) }
 ```
 
 <p>Log Publishing option that is set for given domain. <br/>Attributes and their details: <ul> <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li> <li>Enabled: Whether the log publishing for given log type is enabled or not</li> </ul> </p>
@@ -1735,7 +1735,7 @@ Constructs LogPublishingOption from required parameters
 #### `newLogPublishingOption'`
 
 ``` purescript
-newLogPublishingOption' :: ({ "CloudWatchLogsLogGroupArn" :: NullOrUndefined (CloudWatchLogsLogGroupArn), "Enabled" :: NullOrUndefined (Boolean) } -> { "CloudWatchLogsLogGroupArn" :: NullOrUndefined (CloudWatchLogsLogGroupArn), "Enabled" :: NullOrUndefined (Boolean) }) -> LogPublishingOption
+newLogPublishingOption' :: ({ "CloudWatchLogsLogGroupArn" :: Maybe (CloudWatchLogsLogGroupArn), "Enabled" :: Maybe (Boolean) } -> { "CloudWatchLogsLogGroupArn" :: Maybe (CloudWatchLogsLogGroupArn), "Enabled" :: Maybe (Boolean) }) -> LogPublishingOption
 ```
 
 Constructs LogPublishingOption's fields from required parameters
@@ -1760,7 +1760,7 @@ Encode LogPublishingOptions
 
 ``` purescript
 newtype LogPublishingOptionsStatus
-  = LogPublishingOptionsStatus { "Options" :: NullOrUndefined (LogPublishingOptions), "Status" :: NullOrUndefined (OptionStatus) }
+  = LogPublishingOptionsStatus { "Options" :: Maybe (LogPublishingOptions), "Status" :: Maybe (OptionStatus) }
 ```
 
 <p>The configured log publishing options for the domain and their current status.</p>
@@ -1785,7 +1785,7 @@ Constructs LogPublishingOptionsStatus from required parameters
 #### `newLogPublishingOptionsStatus'`
 
 ``` purescript
-newLogPublishingOptionsStatus' :: ({ "Options" :: NullOrUndefined (LogPublishingOptions), "Status" :: NullOrUndefined (OptionStatus) } -> { "Options" :: NullOrUndefined (LogPublishingOptions), "Status" :: NullOrUndefined (OptionStatus) }) -> LogPublishingOptionsStatus
+newLogPublishingOptionsStatus' :: ({ "Options" :: Maybe (LogPublishingOptions), "Status" :: Maybe (OptionStatus) } -> { "Options" :: Maybe (LogPublishingOptions), "Status" :: Maybe (OptionStatus) }) -> LogPublishingOptionsStatus
 ```
 
 Constructs LogPublishingOptionsStatus's fields from required parameters
@@ -1902,7 +1902,7 @@ Encode OptionState
 
 ``` purescript
 newtype OptionStatus
-  = OptionStatus { "CreationDate" :: UpdateTimestamp, "UpdateDate" :: UpdateTimestamp, "UpdateVersion" :: NullOrUndefined (UIntValue), "State" :: OptionState, "PendingDeletion" :: NullOrUndefined (Boolean) }
+  = OptionStatus { "CreationDate" :: UpdateTimestamp, "UpdateDate" :: UpdateTimestamp, "UpdateVersion" :: Maybe (UIntValue), "State" :: OptionState, "PendingDeletion" :: Maybe (Boolean) }
 ```
 
 <p>Provides the current status of the entity.</p>
@@ -1927,7 +1927,7 @@ Constructs OptionStatus from required parameters
 #### `newOptionStatus'`
 
 ``` purescript
-newOptionStatus' :: UpdateTimestamp -> OptionState -> UpdateTimestamp -> ({ "CreationDate" :: UpdateTimestamp, "UpdateDate" :: UpdateTimestamp, "UpdateVersion" :: NullOrUndefined (UIntValue), "State" :: OptionState, "PendingDeletion" :: NullOrUndefined (Boolean) } -> { "CreationDate" :: UpdateTimestamp, "UpdateDate" :: UpdateTimestamp, "UpdateVersion" :: NullOrUndefined (UIntValue), "State" :: OptionState, "PendingDeletion" :: NullOrUndefined (Boolean) }) -> OptionStatus
+newOptionStatus' :: UpdateTimestamp -> OptionState -> UpdateTimestamp -> ({ "CreationDate" :: UpdateTimestamp, "UpdateDate" :: UpdateTimestamp, "UpdateVersion" :: Maybe (UIntValue), "State" :: OptionState, "PendingDeletion" :: Maybe (Boolean) } -> { "CreationDate" :: UpdateTimestamp, "UpdateDate" :: UpdateTimestamp, "UpdateVersion" :: Maybe (UIntValue), "State" :: OptionState, "PendingDeletion" :: Maybe (Boolean) }) -> OptionStatus
 ```
 
 Constructs OptionStatus's fields from required parameters
@@ -2042,7 +2042,7 @@ Encode ServiceUrl
 
 ``` purescript
 newtype SnapshotOptions
-  = SnapshotOptions { "AutomatedSnapshotStartHour" :: NullOrUndefined (IntegerClass) }
+  = SnapshotOptions { "AutomatedSnapshotStartHour" :: Maybe (IntegerClass) }
 ```
 
 <p>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.</p>
@@ -2067,7 +2067,7 @@ Constructs SnapshotOptions from required parameters
 #### `newSnapshotOptions'`
 
 ``` purescript
-newSnapshotOptions' :: ({ "AutomatedSnapshotStartHour" :: NullOrUndefined (IntegerClass) } -> { "AutomatedSnapshotStartHour" :: NullOrUndefined (IntegerClass) }) -> SnapshotOptions
+newSnapshotOptions' :: ({ "AutomatedSnapshotStartHour" :: Maybe (IntegerClass) } -> { "AutomatedSnapshotStartHour" :: Maybe (IntegerClass) }) -> SnapshotOptions
 ```
 
 Constructs SnapshotOptions's fields from required parameters
@@ -2128,7 +2128,7 @@ Encode StorageSubTypeName
 
 ``` purescript
 newtype StorageType
-  = StorageType { "StorageTypeName" :: NullOrUndefined (StorageTypeName), "StorageSubTypeName" :: NullOrUndefined (StorageSubTypeName), "StorageTypeLimits" :: NullOrUndefined (StorageTypeLimitList) }
+  = StorageType { "StorageTypeName" :: Maybe (StorageTypeName), "StorageSubTypeName" :: Maybe (StorageSubTypeName), "StorageTypeLimits" :: Maybe (StorageTypeLimitList) }
 ```
 
 <p>StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType. </p>
@@ -2153,7 +2153,7 @@ Constructs StorageType from required parameters
 #### `newStorageType'`
 
 ``` purescript
-newStorageType' :: ({ "StorageTypeName" :: NullOrUndefined (StorageTypeName), "StorageSubTypeName" :: NullOrUndefined (StorageSubTypeName), "StorageTypeLimits" :: NullOrUndefined (StorageTypeLimitList) } -> { "StorageTypeName" :: NullOrUndefined (StorageTypeName), "StorageSubTypeName" :: NullOrUndefined (StorageSubTypeName), "StorageTypeLimits" :: NullOrUndefined (StorageTypeLimitList) }) -> StorageType
+newStorageType' :: ({ "StorageTypeName" :: Maybe (StorageTypeName), "StorageSubTypeName" :: Maybe (StorageSubTypeName), "StorageTypeLimits" :: Maybe (StorageTypeLimitList) } -> { "StorageTypeName" :: Maybe (StorageTypeName), "StorageSubTypeName" :: Maybe (StorageSubTypeName), "StorageTypeLimits" :: Maybe (StorageTypeLimitList) }) -> StorageType
 ```
 
 Constructs StorageType's fields from required parameters
@@ -2162,7 +2162,7 @@ Constructs StorageType's fields from required parameters
 
 ``` purescript
 newtype StorageTypeLimit
-  = StorageTypeLimit { "LimitName" :: NullOrUndefined (LimitName), "LimitValues" :: NullOrUndefined (LimitValueList) }
+  = StorageTypeLimit { "LimitName" :: Maybe (LimitName), "LimitValues" :: Maybe (LimitValueList) }
 ```
 
 <p>Limits that are applicable for given storage type. </p>
@@ -2187,7 +2187,7 @@ Constructs StorageTypeLimit from required parameters
 #### `newStorageTypeLimit'`
 
 ``` purescript
-newStorageTypeLimit' :: ({ "LimitName" :: NullOrUndefined (LimitName), "LimitValues" :: NullOrUndefined (LimitValueList) } -> { "LimitName" :: NullOrUndefined (LimitName), "LimitValues" :: NullOrUndefined (LimitValueList) }) -> StorageTypeLimit
+newStorageTypeLimit' :: ({ "LimitName" :: Maybe (LimitName), "LimitValues" :: Maybe (LimitValueList) } -> { "LimitName" :: Maybe (LimitName), "LimitValues" :: Maybe (LimitValueList) }) -> StorageTypeLimit
 ```
 
 Constructs StorageTypeLimit's fields from required parameters
@@ -2366,7 +2366,7 @@ Encode UIntValue
 
 ``` purescript
 newtype UpdateElasticsearchDomainConfigRequest
-  = UpdateElasticsearchDomainConfigRequest { "DomainName" :: DomainName, "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig), "EBSOptions" :: NullOrUndefined (EBSOptions), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) }
+  = UpdateElasticsearchDomainConfigRequest { "DomainName" :: DomainName, "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig), "EBSOptions" :: Maybe (EBSOptions), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "AccessPolicies" :: Maybe (PolicyDocument), "LogPublishingOptions" :: Maybe (LogPublishingOptions) }
 ```
 
 <p>Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.</p>
@@ -2391,7 +2391,7 @@ Constructs UpdateElasticsearchDomainConfigRequest from required parameters
 #### `newUpdateElasticsearchDomainConfigRequest'`
 
 ``` purescript
-newUpdateElasticsearchDomainConfigRequest' :: DomainName -> ({ "DomainName" :: DomainName, "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig), "EBSOptions" :: NullOrUndefined (EBSOptions), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) } -> { "DomainName" :: DomainName, "ElasticsearchClusterConfig" :: NullOrUndefined (ElasticsearchClusterConfig), "EBSOptions" :: NullOrUndefined (EBSOptions), "SnapshotOptions" :: NullOrUndefined (SnapshotOptions), "VPCOptions" :: NullOrUndefined (VPCOptions), "AdvancedOptions" :: NullOrUndefined (AdvancedOptions), "AccessPolicies" :: NullOrUndefined (PolicyDocument), "LogPublishingOptions" :: NullOrUndefined (LogPublishingOptions) }) -> UpdateElasticsearchDomainConfigRequest
+newUpdateElasticsearchDomainConfigRequest' :: DomainName -> ({ "DomainName" :: DomainName, "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig), "EBSOptions" :: Maybe (EBSOptions), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "AccessPolicies" :: Maybe (PolicyDocument), "LogPublishingOptions" :: Maybe (LogPublishingOptions) } -> { "DomainName" :: DomainName, "ElasticsearchClusterConfig" :: Maybe (ElasticsearchClusterConfig), "EBSOptions" :: Maybe (EBSOptions), "SnapshotOptions" :: Maybe (SnapshotOptions), "VPCOptions" :: Maybe (VPCOptions), "AdvancedOptions" :: Maybe (AdvancedOptions), "AccessPolicies" :: Maybe (PolicyDocument), "LogPublishingOptions" :: Maybe (LogPublishingOptions) }) -> UpdateElasticsearchDomainConfigRequest
 ```
 
 Constructs UpdateElasticsearchDomainConfigRequest's fields from required parameters
@@ -2450,7 +2450,7 @@ Encode UpdateTimestamp
 
 ``` purescript
 newtype VPCDerivedInfo
-  = VPCDerivedInfo { "VPCId" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (StringList), "AvailabilityZones" :: NullOrUndefined (StringList), "SecurityGroupIds" :: NullOrUndefined (StringList) }
+  = VPCDerivedInfo { "VPCId" :: Maybe (String), "SubnetIds" :: Maybe (StringList), "AvailabilityZones" :: Maybe (StringList), "SecurityGroupIds" :: Maybe (StringList) }
 ```
 
 <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
@@ -2475,7 +2475,7 @@ Constructs VPCDerivedInfo from required parameters
 #### `newVPCDerivedInfo'`
 
 ``` purescript
-newVPCDerivedInfo' :: ({ "VPCId" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (StringList), "AvailabilityZones" :: NullOrUndefined (StringList), "SecurityGroupIds" :: NullOrUndefined (StringList) } -> { "VPCId" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (StringList), "AvailabilityZones" :: NullOrUndefined (StringList), "SecurityGroupIds" :: NullOrUndefined (StringList) }) -> VPCDerivedInfo
+newVPCDerivedInfo' :: ({ "VPCId" :: Maybe (String), "SubnetIds" :: Maybe (StringList), "AvailabilityZones" :: Maybe (StringList), "SecurityGroupIds" :: Maybe (StringList) } -> { "VPCId" :: Maybe (String), "SubnetIds" :: Maybe (StringList), "AvailabilityZones" :: Maybe (StringList), "SecurityGroupIds" :: Maybe (StringList) }) -> VPCDerivedInfo
 ```
 
 Constructs VPCDerivedInfo's fields from required parameters
@@ -2518,7 +2518,7 @@ Constructs VPCDerivedInfoStatus's fields from required parameters
 
 ``` purescript
 newtype VPCOptions
-  = VPCOptions { "SubnetIds" :: NullOrUndefined (StringList), "SecurityGroupIds" :: NullOrUndefined (StringList) }
+  = VPCOptions { "SubnetIds" :: Maybe (StringList), "SecurityGroupIds" :: Maybe (StringList) }
 ```
 
 <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
@@ -2543,7 +2543,7 @@ Constructs VPCOptions from required parameters
 #### `newVPCOptions'`
 
 ``` purescript
-newVPCOptions' :: ({ "SubnetIds" :: NullOrUndefined (StringList), "SecurityGroupIds" :: NullOrUndefined (StringList) } -> { "SubnetIds" :: NullOrUndefined (StringList), "SecurityGroupIds" :: NullOrUndefined (StringList) }) -> VPCOptions
+newVPCOptions' :: ({ "SubnetIds" :: Maybe (StringList), "SecurityGroupIds" :: Maybe (StringList) } -> { "SubnetIds" :: Maybe (StringList), "SecurityGroupIds" :: Maybe (StringList) }) -> VPCOptions
 ```
 
 Constructs VPCOptions's fields from required parameters

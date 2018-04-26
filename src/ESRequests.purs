@@ -13,7 +13,7 @@ import AWS.ES.Types as ESTypes
 
 
 -- | <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging" target="_blank"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>
-addTags :: forall eff. ES.Service -> ESTypes.AddTagsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+addTags :: forall eff. ES.Service -> ESTypes.AddTagsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 addTags (ES.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "addTags"
 
@@ -31,8 +31,8 @@ deleteElasticsearchDomain (ES.Service serviceImpl) = AWS.request serviceImpl met
 
 
 -- | <p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr" target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>
-deleteElasticsearchServiceRole :: forall eff. ES.Service ->  Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteElasticsearchServiceRole (ES.Service serviceImpl) = AWS.request serviceImpl method (Types.NoInput unit) where
+deleteElasticsearchServiceRole :: forall eff. ES.Service ->  Aff (exception :: EXCEPTION | eff) Unit
+deleteElasticsearchServiceRole (ES.Service serviceImpl) = AWS.request serviceImpl method unit where
     method = AWS.MethodName "deleteElasticsearchServiceRole"
 
 
@@ -62,7 +62,7 @@ describeElasticsearchInstanceTypeLimits (ES.Service serviceImpl) = AWS.request s
 
 -- | <p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>
 listDomainNames :: forall eff. ES.Service ->  Aff (exception :: EXCEPTION | eff) ESTypes.ListDomainNamesResponse
-listDomainNames (ES.Service serviceImpl) = AWS.request serviceImpl method (Types.NoInput unit) where
+listDomainNames (ES.Service serviceImpl) = AWS.request serviceImpl method unit where
     method = AWS.MethodName "listDomainNames"
 
 
@@ -85,7 +85,7 @@ listTags (ES.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | <p>Removes the specified set of tags from the specified Elasticsearch domain.</p>
-removeTags :: forall eff. ES.Service -> ESTypes.RemoveTagsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+removeTags :: forall eff. ES.Service -> ESTypes.RemoveTagsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 removeTags (ES.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "removeTags"
 
